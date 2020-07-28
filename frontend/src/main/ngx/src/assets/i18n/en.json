@@ -17,6 +17,12 @@
   "STARTDATE":"Start date",
   "STATUS":"Status",
   "DESCRIPTION":"Description",
-  "NUMBER_PARTE":"Parte's number"
+  "NUMBER_PARTE":"Parte number",
+  "LIST_PARTES": "List of partes",
+  "IDPARTE":"Parte number",
+  "ENDDATE":"Closing date",
+  "COMMENTS":"Comments",
+  "GASTO":"Spending"
+  
 
 }

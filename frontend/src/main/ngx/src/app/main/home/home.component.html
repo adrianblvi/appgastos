@@ -1,7 +1,7 @@
 <o-column>
   <o-row>
     <div fxFlex>
-      <o-list #list attr="parteslist" service="partes" entity="parteDetails" keys="IDPARTE"
+      <o-list #list title="{{'LIST_PARTES' | oTranslate}}" attr="parteslist" service="partes" entity="parteDetails" keys="IDPARTE"
         columns="IDPARTE;DESCRIPTION;STARTDATE;COMMENTS;GASTO;STATUS;ENDDATE" delete-button="no" insert-button="true"
         insert-button-position="top" insert-button-floatable="true" quick-filter-columns="DESCRIPTION">
         <mat-card *ngFor="let rowData of list.dataArray" [o-list-item]="rowData">

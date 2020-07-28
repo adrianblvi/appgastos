@@ -11,7 +11,7 @@ const routes: Routes = [
     path: 'new',
     component: HomeNewComponent
   }, {
-    path: ':PARTEID',
+    path: ':IDPARTE',
     component: HomeDetailComponent
   }
 ];
