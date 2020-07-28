@@ -52,28 +52,34 @@ public class ParteService implements IParteService {
 	}
 
 	@Override
-	 public EntityResult statusQuery(Map<String, Object> keyMap, List<String> attrList)
-	   throws OntimizeJEERuntimeException {
-	  return this.daoHelper.query(this.statusDao, keyMap, attrList);
-	 }
+	public EntityResult statusQuery(Map<String, Object> keyMap, List<String> attrList)
+			throws OntimizeJEERuntimeException {
+		return this.daoHelper.query(this.statusDao, keyMap, attrList);
+	}
 
-	 @Override
-	 @Transactional(rollbackFor = Exception.class)
-	 public EntityResult statusInsert(Map<String, Object> attrMap) throws OntimizeJEERuntimeException {
-	  return this.daoHelper.insert(this.statusDao, attrMap);
-	 }
+	@Override
+	@Transactional(rollbackFor = Exception.class)
+	public EntityResult statusInsert(Map<String, Object> attrMap) throws OntimizeJEERuntimeException {
+		return this.daoHelper.insert(this.statusDao, attrMap);
+	}
 
-	 @Override
-	 @Transactional(rollbackFor = Exception.class)
-	 public EntityResult statusUpdate(Map<String, Object> attrMap, Map<String, Object> keyMap)
-	   throws OntimizeJEERuntimeException {
-	  return this.daoHelper.update(this.statusDao, attrMap, keyMap);
-	 }
+	@Override
+	@Transactional(rollbackFor = Exception.class)
+	public EntityResult statusUpdate(Map<String, Object> attrMap, Map<String, Object> keyMap)
+			throws OntimizeJEERuntimeException {
+		return this.daoHelper.update(this.statusDao, attrMap, keyMap);
+	}
 
-	 @Override
-	 @Transactional(rollbackFor = Exception.class)
-	 public EntityResult statusDelete(Map<String, Object> keyMap) throws OntimizeJEERuntimeException {
-	  return this.daoHelper.delete(this.statusDao, keyMap);
-	 }
+	@Override
+	@Transactional(rollbackFor = Exception.class)
+	public EntityResult statusDelete(Map<String, Object> keyMap) throws OntimizeJEERuntimeException {
+		return this.daoHelper.delete(this.statusDao, keyMap);
+	}
+
+	@Override
+	public EntityResult parteDetailsQuery(Map<String, Object> keyMap, List<String> attrList)
+			throws OntimizeJEERuntimeException {
+		return this.daoHelper.query(this.parteDao, keyMap, attrList, parteDao.QUERY_DETAILS);
+	}
 
 }

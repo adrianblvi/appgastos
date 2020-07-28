@@ -1,5 +1,24 @@
-<div fxLayout="row" layout-padding fxLayoutAlign="center center">
-  <p>
-    Ontimize web seed application home component
-  </p>
-</div>
+<o-column>
+  <o-row>
+    <div fxFlex>
+      <o-list #list attr="parteslist" service="partes" entity="parteDetails" keys="IDPARTE"
+        columns="IDPARTE;DESCRIPTION;STARTDATE;COMMENTS;GASTO;STATUS;ENDDATE" delete-button="no" insert-button="true"
+        insert-button-position="top" insert-button-floatable="true" quick-filter-columns="DESCRIPTION">
+        <mat-card *ngFor="let rowData of list.dataArray" [o-list-item]="rowData">
+          <mat-card-header>
+            <mat-card-title><strong>
+                <font size=3>{{ rowData.IDPARTE }}</font>
+              </strong></mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <o-column>
+              {{'DESCRIPTION' | oTranslate }}: {{ rowData.DESCRIPTION }}
+              <p>{{'STARTDATE' | oTranslate }}: {{ rowData.STARTDATE | date  }}</p>
+              {{'STATUS' | oTranslate}}: {{ rowData.STATUS }}
+            </o-column>
+          </mat-card-content>
+        </mat-card>
+      </o-list>
+    </div>
+  </o-row>
+</o-column>

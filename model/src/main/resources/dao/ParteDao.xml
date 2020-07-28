@@ -12,4 +12,23 @@
   <Column>IDPARTE</Column>
  </UpdateKeys>
  <GeneratedKey>IDPARTE</GeneratedKey>
+ <Queries>
+		<Query id="details">
+			<AmbiguousColumns>
+				<AmbiguousColumn name="STATUS"
+					databaseName="DESCRIPTION" prefix="OS" />
+			</AmbiguousColumns>
+			<Sentence>
+				 <![CDATA[
+					SELECT
+						#COLUMNS#
+					FROM
+						PUBLIC.PARTE O
+					INNER JOIN PUBLIC.STATUS OS
+						ON O.STATUS = OS.ID
+					#WHERE# 
+				 ]]>
+			 </Sentence>
+		</Query>
+	</Queries>
 </JdbcEntitySetup>

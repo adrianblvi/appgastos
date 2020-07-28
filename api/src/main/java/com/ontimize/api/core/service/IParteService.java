@@ -30,5 +30,8 @@ public interface IParteService {
 			throws OntimizeJEERuntimeException;
 
 	public EntityResult statusDelete(Map<String, Object> keyMap) throws OntimizeJEERuntimeException;
+	
+	EntityResult parteDetailsQuery(Map<String, Object> keyMap, List<String> attrList)
+			throws OntimizeJEERuntimeException;
 
 }
