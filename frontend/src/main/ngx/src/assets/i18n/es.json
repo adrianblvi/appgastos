@@ -22,6 +22,7 @@
   "IDPARTE":"Número de parte",
   "ENDDATE":"Fecha de Cierre",
   "COMMENTS": "Comentarios",
-  "GASTO":"Gasto"
+  "GASTO":"Gasto",
+  "PARTE_INFORMATION": "INFORMACIÓN DEL PARTE"
 
 }

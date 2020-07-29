@@ -22,7 +22,8 @@
   "IDPARTE":"Parte number",
   "ENDDATE":"Closing date",
   "COMMENTS":"Comments",
-  "GASTO":"Spending"
+  "GASTO":"Spending",
+  "PARTE_INFORMATION": "PARTE INFORMATION"
   
 
 }

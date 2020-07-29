@@ -73,4 +73,10 @@ public class GastoService implements IGastoService {
 		 return this.daoHelper.delete(this.categoryDao, keyMap);
 	}
 
+	@Override
+	public EntityResult gastoDetailsQuery(Map<String, Object> keyMap, List<String> attrList)
+			throws OntimizeJEERuntimeException {
+		return this.daoHelper.query(this.gastoDao, keyMap, attrList, gastoDao.QUERY_DETAILS);
+	}
+
 }

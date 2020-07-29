@@ -1,15 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <JdbcEntitySetup
- xmlns="http://www.ontimize.com/schema/jdbc"
- xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://www.ontimize.com/schema/jdbc http://www.ontimize.com/schema/jdbc/ontimize-jdbc-dao.xsd"
- catalog="" schema="${mainschema}" table="GASTO"
- datasource="mainDataSource" sqlhandler="dbSQLStatementHandler">
- <DeleteKeys>
-  <Column>ID</Column>
- </DeleteKeys>
- <UpdateKeys>
-  <Column>ID</Column>
- </UpdateKeys>
- <GeneratedKey>ID</GeneratedKey>
+	xmlns="http://www.ontimize.com/schema/jdbc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.ontimize.com/schema/jdbc http://www.ontimize.com/schema/jdbc/ontimize-jdbc-dao.xsd"
+	catalog="" schema="${mainschema}" table="GASTO"
+	datasource="mainDataSource" sqlhandler="dbSQLStatementHandler">
+	<DeleteKeys>
+		<Column>ID</Column>
+	</DeleteKeys>
+	<UpdateKeys>
+		<Column>ID</Column>
+	</UpdateKeys>
+	<GeneratedKey>ID</GeneratedKey>
+	<Queries>
+		<Query id="details">
+			<AmbiguousColumns>
+				<AmbiguousColumn name="CATEGORY"
+					databaseName="DESCRIPTION" prefix="OS" />
+			</AmbiguousColumns>
+			<Sentence>
+				 <![CDATA[
+					SELECT
+						#COLUMNS#
+					FROM
+						PUBLIC.GASTO O
+					INNER JOIN PUBLIC.CATEGORY OS
+						ON O.CATEGORY = OS.ID
+					#WHERE# 
+				 ]]>
+			 </Sentence>
+		</Query>
+	</Queries>
 </JdbcEntitySetup>
