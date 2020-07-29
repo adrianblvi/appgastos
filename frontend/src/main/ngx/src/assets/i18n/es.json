@@ -23,6 +23,8 @@
   "ENDDATE":"Fecha de Cierre",
   "COMMENTS": "Comentarios",
   "GASTO":"Gasto",
-  "PARTE_INFORMATION": "INFORMACIÓN DEL PARTE"
+  "PARTE_INFORMATION": "INFORMACIÓN DEL PARTE",
+  "ADD_GASTO":"Añadir nuevo gasto",
+  "NEW_GASTO":"Nuevo gasto"
 
 }

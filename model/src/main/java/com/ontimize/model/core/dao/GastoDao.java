@@ -12,7 +12,6 @@ import com.ontimize.jee.server.dao.jdbc.OntimizeJdbcDaoSupport;
 
 public class GastoDao extends OntimizeJdbcDaoSupport {
 	public static final String ATTR_ID = "ID";
-	public static final String ATTR_ID_PARTE = "ID_PARTE";
 	public static final String ATTR_CONCEPT = "CONCEPT";
 	public static final String ATTR_STARTDATE = "STARTDATE";
 	public static final String ATTR_COMMENTS = "COMMENTS";

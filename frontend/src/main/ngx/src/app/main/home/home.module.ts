@@ -5,8 +5,6 @@ import { HomeComponent } from './home.component';
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeNewComponent } from './home-new/home-new.component';
 import { HomeDetailComponent } from './home-detail/home-detail.component';
-import { HomeGastoDetailComponent } from './home-gasto-detail/home-gasto-detail.component';
-import { HomeGastoNewComponent } from './home-gasto-new/home-gasto-new.component';
 
 @NgModule({
   imports: [
@@ -17,9 +15,7 @@ import { HomeGastoNewComponent } from './home-gasto-new/home-gasto-new.component
   declarations: [
     HomeComponent,
     HomeNewComponent,
-    HomeDetailComponent,
-    HomeGastoDetailComponent,
-    HomeGastoNewComponent
+    HomeDetailComponent
   ]
 })
 export class HomeModule { }
