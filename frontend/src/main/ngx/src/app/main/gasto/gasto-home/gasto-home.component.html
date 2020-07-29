@@ -1,21 +1,21 @@
 <o-column>
   <o-row>
     <div fxFlex>
-      <o-list #list title="{{'LIST_PARTES' | oTranslate}}" attr="parteslist" service="partes" entity="parteDetails"
-        keys="IDPARTE" columns="IDPARTE;DESCRIPTION;STARTDATE;COMMENTS;STATUS;ENDDATE" delete-button="no"
+      <o-list #list title="{{'LIST_GASTOS' | oTranslate}}" attr="spendinglist" service="gastos" entity="gastoDetails"
+        keys="ID" columns="ID;CONCEPT;STARTDATE;COMMENTS;CATEGORY;AMOUNT;PRICE;PHOTO" delete-button="no"
         insert-button="true" insert-button-position="top" insert-button-floatable="true"
         quick-filter-columns="DESCRIPTION">
         <mat-card *ngFor="let rowData of list.dataArray" [o-list-item]="rowData">
           <mat-card-header>
             <mat-card-title><strong>
-              <font size=3>{{ rowData.DESCRIPTION }}</font>  
+                <font size=3>{{ rowData.CONCEPT }}</font>
               </strong></mat-card-title>
-            <mat-card-subtitle>ID:{{rowData.IDPARTE}}</mat-card-subtitle>
+            <mat-card-subtitle>ID:{{rowData.ID}}</mat-card-subtitle>
           </mat-card-header>
           <mat-card-content>
             <o-column>
               {{'STARTDATE' | oTranslate }}: {{ rowData.STARTDATE | date  }}
-              <p>{{'STATUS' | oTranslate}}: {{ rowData.STATUS }}</p>
+              <p>{{'STATUS' | oTranslate}}: {{ rowData.CATEGORY }}</p>
             </o-column>
           </mat-card-content>
         </mat-card>

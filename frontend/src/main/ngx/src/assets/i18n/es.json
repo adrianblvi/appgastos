@@ -25,6 +25,10 @@
   "GASTO":"Gasto",
   "PARTE_INFORMATION": "INFORMACIÓN DEL PARTE",
   "ADD_GASTO":"Añadir nuevo gasto",
-  "NEW_GASTO":"Nuevo gasto"
+  "NEW_GASTO":"Nuevo gasto",
+  "MOVEMENTS" :"Partes",
+  "SPENDINGS":" Gastos",
+  "LIST_GASTOS":"Lista de Gastos",
+  "SPENDING_INFORMATION":"INFORMACIÓN SOBRE EL GASTO"
 
 }

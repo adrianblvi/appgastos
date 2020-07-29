@@ -25,7 +25,11 @@
   "GASTO":"Spending",
   "PARTE_INFORMATION": "PARTE INFORMATION",
   "ADD_GASTO":"Add new spending",
-  "NEW_GASTO":"New spending"
+  "NEW_GASTO":"New spending",
+  "MOVEMENTS" :"Movements",
+  "SPENDINGS":"Spendings",
+  "LIST_GASTOS":"Spending List",
+  "SPENDING_INFORMATION":"SPENDING INFORMATION"
   
 
 }
