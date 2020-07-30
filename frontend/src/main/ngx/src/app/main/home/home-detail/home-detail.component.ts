@@ -1,4 +1,5 @@
-import { Component, OnInit, } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { OFormComponent } from 'ontimize-web-ngx';
 
 @Component({
   selector: 'app-home-detail',
@@ -6,11 +7,13 @@ import { Component, OnInit, } from '@angular/core';
   styleUrls: ['./home-detail.component.scss']
 })
 export class HomeDetailComponent implements OnInit {
-  enabled: boolean;
-  constructor() { 
-    this.enabled=true;
+
+  @ViewChild('oForm')
+  private oForm: OFormComponent;
+
+  constructor() {
   }
-  
+
   ngOnInit() {
   }
 

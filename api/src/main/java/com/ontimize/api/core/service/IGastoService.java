@@ -33,4 +33,6 @@ public interface IGastoService {
 	
 	EntityResult gastoDetailsQuery(Map<String, Object> keyMap, List<String> attrList)
 			throws OntimizeJEERuntimeException;
+	EntityResult gastoGastosvistaQuery(Map<String, Object> keyMap, List<String> attrList)
+			throws OntimizeJEERuntimeException;
 }

@@ -7,8 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GastoNewComponent implements OnInit {
 
-  constructor() { }
+  protected dateValue: Date = new Date();
 
+
+  constructor() { }
+  getValueDate() {
+    return this.dateValue;
+  }
   ngOnInit() {
   }
 
