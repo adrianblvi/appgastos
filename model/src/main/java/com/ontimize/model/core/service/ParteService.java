@@ -1,5 +1,7 @@
 package com.ontimize.model.core.service;
 
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.Map;
 
@@ -42,6 +44,7 @@ public class ParteService implements IParteService {
 	@Transactional(rollbackFor = Exception.class)
 	public EntityResult parteUpdate(Map<String, Object> attrMap, Map<String, Object> keyMap)
 			throws OntimizeJEERuntimeException {
+		// comprobar el valor de status y si es cerrado poner fecha fin
 		return this.daoHelper.update(this.parteDao, attrMap, keyMap);
 	}
 

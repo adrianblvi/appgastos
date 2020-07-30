@@ -1,5 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { OTextInputComponent } from 'ontimize-web-ngx';
+import { Component, OnInit, } from '@angular/core';
 
 @Component({
   selector: 'app-home-detail',
@@ -7,13 +6,11 @@ import { OTextInputComponent } from 'ontimize-web-ngx';
   styleUrls: ['./home-detail.component.scss']
 })
 export class HomeDetailComponent implements OnInit {
-
-  constructor() { }
-  ngAfterContentChecked(): void {
-    this.id = this.idcurriculum.getValue()
+  enabled: boolean;
+  constructor() { 
+    this.enabled=true;
   }
-  @ViewChild('ids') idcurriculum: OTextInputComponent
-  id: string
+  
   ngOnInit() {
   }
 

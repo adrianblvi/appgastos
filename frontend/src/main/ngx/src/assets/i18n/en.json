@@ -29,7 +29,11 @@
   "MOVEMENTS" :"Movements",
   "SPENDINGS":"Spendings",
   "LIST_GASTOS":"Spending List",
-  "SPENDING_INFORMATION":"SPENDING INFORMATION"
+  "SPENDING_INFORMATION":"SPENDING INFORMATION",
+  "CONCEPT":"Concept",
+  "CATEGORY":"Category",
+  "AMOUNT":"Amount",
+  "PRICE":"Price"
   
 
 }

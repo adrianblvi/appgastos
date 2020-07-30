@@ -29,6 +29,10 @@
   "MOVEMENTS" :"Partes",
   "SPENDINGS":" Gastos",
   "LIST_GASTOS":"Lista de Gastos",
-  "SPENDING_INFORMATION":"INFORMACIÓN SOBRE EL GASTO"
+  "SPENDING_INFORMATION":"INFORMACIÓN SOBRE EL GASTO",
+  "CONCEPT":"Concepto",
+  "CATEGORY":"Categoria",
+  "AMOUNT":"Cantidad",
+  "PRICE":"Importe"
 
 }
