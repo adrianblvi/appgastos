@@ -13,18 +13,6 @@
 	</UpdateKeys>
 	<GeneratedKey>ID</GeneratedKey>
 	<Queries>
-		<Query id="gastosvista">
-			<Sentence>
-               <![CDATA[
-               SELECT
-                  #COLUMNS# 
-               FROM
-                  VPARTEGASTO
-               #WHERE#
-               #ORDER#
-            ]]>
-         </Sentence>
-		</Query>
 		<Query id="details">
 			<AmbiguousColumns>
 				<AmbiguousColumn name="CATEGORY"

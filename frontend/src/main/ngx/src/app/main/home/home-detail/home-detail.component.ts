@@ -10,11 +10,12 @@ export class HomeDetailComponent implements OnInit {
 
   @ViewChild('oForm')
   private oForm: OFormComponent;
-
   constructor() {
   }
 
   ngOnInit() {
   }
-
+  changevalue(data: any) {
+    console.log("Dataaa");
+  }
 }

@@ -33,6 +33,7 @@
   "CONCEPT":"Concepto",
   "CATEGORY":"Categoria",
   "AMOUNT":"Cantidad",
-  "PRICE":"Importe"
+  "PRICE":"Importe",
+  "SAVE_CHANGES": "Guardar Cambios"
 
 }

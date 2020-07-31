@@ -1,5 +1,8 @@
 package com.ontimize.model.core.service;
 
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.Map;
 
@@ -42,6 +45,15 @@ public class ParteService implements IParteService {
 	@Transactional(rollbackFor = Exception.class)
 	public EntityResult parteUpdate(Map<String, Object> attrMap, Map<String, Object> keyMap)
 			throws OntimizeJEERuntimeException {
+		this.daoHelper.update(this.parteDao, attrMap, keyMap);
+		ArrayList<String> list = new ArrayList<String>();
+		list.add(parteDao.ATTR_STATUS);
+		EntityResult query = this.daoHelper.query(this.parteDao, keyMap, list, parteDao.QUERY_DETAILS);
+		Object newStatus = query.get(parteDao.ATTR_STATUS);
+		if (newStatus.toString().trim().equals("[Cerrado]")) {
+			Calendar endDate = GregorianCalendar.getInstance();
+			 attrMap.put(parteDao.ATTR_ENDDATE, endDate.getTime());
+		}
 		return this.daoHelper.update(this.parteDao, attrMap, keyMap);
 	}
 

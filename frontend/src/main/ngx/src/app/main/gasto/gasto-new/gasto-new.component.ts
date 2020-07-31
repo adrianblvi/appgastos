@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { OFormComponent } from 'ontimize-web-ngx';
 @Component({
   selector: 'app-gasto-new',
   templateUrl: './gasto-new.component.html',
@@ -7,13 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GastoNewComponent implements OnInit {
 
-  protected dateValue: Date = new Date();
-
+  @ViewChild('oForm')
+  private oForm: OFormComponent;
 
   constructor() { }
-  getValueDate() {
-    return this.dateValue;
-  }
   ngOnInit() {
   }
 

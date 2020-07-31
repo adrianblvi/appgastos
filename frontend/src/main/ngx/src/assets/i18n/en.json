@@ -33,7 +33,8 @@
   "CONCEPT":"Concept",
   "CATEGORY":"Category",
   "AMOUNT":"Amount",
-  "PRICE":"Price"
+  "PRICE":"Price",
+  "SAVE_CHANGES": "Save Changes"
   
 
 }

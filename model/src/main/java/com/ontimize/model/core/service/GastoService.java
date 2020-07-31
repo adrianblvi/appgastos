@@ -79,10 +79,4 @@ public class GastoService implements IGastoService {
 		return this.daoHelper.query(this.gastoDao, keyMap, attrList, gastoDao.QUERY_DETAILS);
 	}
 
-	@Override
-	public EntityResult gastoGastosvistaQuery(Map<String, Object> keyMap, List<String> attrList)
-			throws OntimizeJEERuntimeException {
-		return this.daoHelper.query(this.gastoDao, keyMap, attrList, gastoDao.QUERY_GASTOSVISTA);
-	}
-
 }
