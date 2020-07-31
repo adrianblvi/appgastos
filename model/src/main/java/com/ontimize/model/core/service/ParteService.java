@@ -94,4 +94,10 @@ public class ParteService implements IParteService {
 		return this.daoHelper.query(this.parteDao, keyMap, attrList, parteDao.QUERY_DETAILS);
 	}
 
+	@Override
+	public EntityResult parteDetailsGastoQuery(Map<String, Object> keyMap, List<String> attrList)
+			throws OntimizeJEERuntimeException {
+		return  this.daoHelper.query(this.parteDao, keyMap, attrList, parteDao.QUERY_DETAILSGASTO);
+	}
+
 }

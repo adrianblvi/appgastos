@@ -33,7 +33,8 @@ public interface IParteService {
 	
 	EntityResult parteDetailsQuery(Map<String, Object> keyMap, List<String> attrList)
 			throws OntimizeJEERuntimeException;
-	
+	EntityResult parteDetailsGastoQuery(Map<String, Object> keyMap, List<String> attrList)
+			throws OntimizeJEERuntimeException;
 	
 
 
