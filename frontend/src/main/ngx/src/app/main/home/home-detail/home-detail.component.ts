@@ -15,7 +15,4 @@ export class HomeDetailComponent implements OnInit {
 
   ngOnInit() {
   }
-  changevalue(data: any) {
-    console.log("Dataaa");
-  }
 }

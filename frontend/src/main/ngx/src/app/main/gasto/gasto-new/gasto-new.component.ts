@@ -13,5 +13,7 @@ export class GastoNewComponent implements OnInit {
   constructor() { }
   ngOnInit() {
   }
-
+  public getValue() {
+    return 10;
+  }
 }

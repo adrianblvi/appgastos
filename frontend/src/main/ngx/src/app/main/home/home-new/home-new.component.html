@@ -17,13 +17,7 @@
       </o-row>
       <mat-tab-group>
         <mat-tab [label]="'SPENDINGS' | oTranslate">
-          <o-list #spendingList service="gastos" entity="gasto" keys="ID" parent-keys="IDPARTE"
-          columns="CUSTOMERID;ACCOUNTID;NAME;SURNAME;ISOWNER" query-on-init="no" query-on-bind="yes" controls="no">
-          <mat-list-item *ngFor="let spend of spendingList.dataArray">
-            <mat-icon mat-list-icon >person</mat-icon>
-            <span mat-line>{{ spend.CONCEPT }} </span>
-          </mat-list-item>
-        </o-list>
+         
         </mat-tab>
       </mat-tab-group>
     </o-column>
