@@ -13,5 +13,6 @@ import { GastoNewComponent } from './gasto-new/gasto-new.component';
     GastoRoutingModule
   ],
   declarations: [GastoHomeComponent, GastoDetailComponent, GastoNewComponent]
-})
+}
+)
 export class GastoModule { }

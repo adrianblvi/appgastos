@@ -4,6 +4,7 @@ import { GastoHomeComponent } from './gasto-home/gasto-home.component';
 import { GastoDetailComponent } from './gasto-detail/gasto-detail.component';
 import { GastoNewComponent } from './gasto-new/gasto-new.component';
 
+
 const routes: Routes = [
   {
     path: '',
