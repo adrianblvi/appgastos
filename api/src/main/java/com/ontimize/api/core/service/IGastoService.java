@@ -30,7 +30,10 @@ public interface IGastoService {
 			throws OntimizeJEERuntimeException;
 
 	public EntityResult categoryDelete(Map<String, Object> keyMap) throws OntimizeJEERuntimeException;
-	
+
+	public EntityResult vGastoQuery(Map<String, Object> keysValues, List<String> attributes)
+			throws OntimizeJEERuntimeException;
+
 	EntityResult gastoDetailsQuery(Map<String, Object> keyMap, List<String> attrList)
 			throws OntimizeJEERuntimeException;
 }

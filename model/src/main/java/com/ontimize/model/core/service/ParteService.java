@@ -1,8 +1,5 @@
 package com.ontimize.model.core.service;
 
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.Map;
 
@@ -94,10 +91,6 @@ public class ParteService implements IParteService {
 		return this.daoHelper.query(this.parteDao, keyMap, attrList, parteDao.QUERY_DETAILS);
 	}
 
-	@Override
-	public EntityResult parteDetailsGastoQuery(Map<String, Object> keyMap, List<String> attrList)
-			throws OntimizeJEERuntimeException {
-		return  this.daoHelper.query(this.parteDao, keyMap, attrList, parteDao.QUERY_DETAILSGASTO);
-	}
+	
 
 }

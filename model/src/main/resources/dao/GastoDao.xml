@@ -13,6 +13,18 @@
 	</UpdateKeys>
 	<GeneratedKey>ID</GeneratedKey>
 	<Queries>
+		<Query id="VGASTO">
+			<Sentence>
+               <![CDATA[
+               SELECT
+                  #COLUMNS# 
+               FROM
+                  PUBLIC.PUBLIC.VGASTO
+               #WHERE#
+               #ORDER#
+            ]]>
+         </Sentence>
+		</Query>
 		<Query id="details">
 			<AmbiguousColumns>
 				<AmbiguousColumn name="CATEGORY"

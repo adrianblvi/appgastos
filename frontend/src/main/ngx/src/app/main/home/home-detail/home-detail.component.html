@@ -21,10 +21,9 @@
         </o-row>
         <mat-tab-group>
           <mat-tab [label]="'SPENDINGS' | oTranslate">
-            <o-list #list title="{{'LIST_GASTOS' | oTranslate}}" attr="spendinglist" service="gastos"
-              entity="gastoDetails" keys="ID" columns="ID;CONCEPT;STARTDATE;COMMENTS;CATEGORY;AMOUNT;PRICE;PHOTO"
-              selectable="true" insert-button="false" insert-button-position="top" insert-button-floatable="false"
-              delete-button="no" quick-filter="false">
+            <o-list #list attr="spendinglist" service="gastos" entity="vGasto" keys="ID"
+              columns="ID;CONCEPT;STARTDATE;CATEGORY;PRICE" selectable="true" insert-button="false"
+              insert-button-position="top" insert-button-floatable="false" delete-button="no" quick-filter="false">
               <mat-card *ngFor="let rowData of list.dataArray" [o-list-item]="rowData">
                 <mat-card-header>
                   <mat-card-title><strong>
@@ -66,14 +65,12 @@
         </o-row>
         <mat-tab-group>
           <mat-tab [label]="'SPENDINGS' | oTranslate">
-            <o-list #list title="{{'LIST_GASTOS' | oTranslate}}" attr="spendinglist" service="gastos"
-              entity="gastoDetails" keys="ID" columns="ID;CONCEPT;STARTDATE;COMMENTS;CATEGORY;AMOUNT;PRICE;PHOTO"
-              refresh-button="true" insert-button="true" insert-button-position="bottom" insert-button-floatable="false"
-              delete-button="true" selectable="true" dense="false" detail-button-in-row="true"
-              detail-button-in-row-icon="chevron_right">
+            <o-list #list attr="spendinglist" service="gastos" entity="vGasto" keys="ID"
+              columns="ID;CONCEPT;STARTDATE;CATEGORY;PRICE" refresh-button="true" insert-button="true"
+              quick-filter="false" insert-button-position="bottom" insert-button-floatable="false" delete-button="true"
+              selectable="true" dense="false" detail-button-in-row="true" detail-button-in-row-icon="chevron_right">
               <o-list-item *ngFor="let row of list.dataArray">
-                <o-list-item-text #item title="{{ row.CONCEPT }}" primary-text="{{ row.CATEGORY }}"
-                  secondary-text="{{ row.STARTDATE | date}}">
+                <o-list-item-text #item title="{{ row.CONCEPT }}" primary-text="{{ row.STARTDATE | date}}">
                 </o-list-item-text>
               </o-list-item>
             </o-list>

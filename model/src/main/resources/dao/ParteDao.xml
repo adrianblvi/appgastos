@@ -30,18 +30,5 @@
 				 ]]>
 			 </Sentence>
 		</Query>
-		<Query id="detailsgasto">
-			<Sentence>
-				 <![CDATA[
-					SELECT
-						#COLUMNS#
-					FROM
-						PUBLIC.PARTE O
-					INNER JOIN PUBLIC.GASTO OS
-						ON O.IDPARTE = OS.ID_PARTE
-					#WHERE# 
-				 ]]>
-			 </Sentence>
-		</Query>
 	</Queries>
 </JdbcEntitySetup>
