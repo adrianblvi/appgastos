@@ -19,7 +19,7 @@ export class GastoNewComponent implements OnInit {
   constructor() { }
   ngOnInit() {
   }
- 
+
   valueChange(event) {
     let a = this.CATEGORY.getSelectedRecord()['PRICE']
     if (isUndefined(a)) {
@@ -32,7 +32,11 @@ export class GastoNewComponent implements OnInit {
   }
   amountChange(event) {
     let a = this.CATEGORY.getSelectedRecord()['PRICE']
-    console.log(a);
-    this.PRICE.setValue(this.AMOUNT.getValue()*a);
+    if (!(typeof a === "undefined")) {
+      this.PRICE.setValue(this.AMOUNT.getValue() * a);
+    }else{
+      this.PRICE.setValue(0);
+    }
+
   }
 }
