@@ -3,19 +3,21 @@
   <div *ngIf="oForm.getDataValue('ENDDATE').value; else elseBlock">
     <o-row>
       <o-column title-label="PARTE INFORMATION" fxFlex>
-        <o-row layout-gap="14px" layout-padding-vertical>
+        <o-row>
           <o-text-input class="input-padding" attr="DESCRIPTION" fxFlex="50" enabled="no" required="yes">
           </o-text-input>
-          <o-date-input attr="STARTDATE" required="yes" fxFlex="50" enabled="no"></o-date-input>
         </o-row>
         <o-row layout-gap="14px" layout-padding-vertical>
+          <o-date-input attr="STARTDATE" required="yes" fxFlex="25" enabled="no"></o-date-input>
+          <o-date-input attr="ENDDATE" enabled="no" fxFlex="25"></o-date-input>
+        </o-row>
+        <o-row>
           <o-combo attr="STATUS" service="partes" entity="status" columns="ID;DESCRIPTION" value-column="ID" keys="ID"
             visible-columns="DESCRIPTION" enabled="no" fxFlex="50">
           </o-combo>
-          <o-date-input attr="ENDDATE" enabled="no" fxFlex="50"></o-date-input>
         </o-row>
         <o-row>
-          <o-textarea-input attr="COMMENTS" enabled="no" fxFlex></o-textarea-input>
+          <o-textarea-input attr="COMMENTS" enabled="no" fxFlex="50"></o-textarea-input>
         </o-row>
         <mat-tab-group>
           <mat-tab [label]="'SPENDINGS' | oTranslate">
@@ -46,19 +48,21 @@
   <ng-template #elseBlock>
     <o-row>
       <o-column title-label="PARTE INFORMATION" fxFlex>
-        <o-row layout-gap="14px" layout-padding-vertical>
+        <o-row>
           <o-text-input class="input-padding" attr="DESCRIPTION" fxFlex="50" required="yes">
           </o-text-input>
-          <o-date-input attr="STARTDATE" required="yes" fxFlex="50"></o-date-input>
         </o-row>
         <o-row layout-gap="14px" layout-padding-vertical>
-          <o-combo #STATUS (onChange)="valueChange($event)" attr="STATUS" service="partes" entity="status" columns="ID;DESCRIPTION" value-column="ID" keys="ID"
-            visible-columns="DESCRIPTION" fxFlex="50">
+          <o-date-input attr="STARTDATE" required="yes" fxFlex="25"></o-date-input>
+          <o-date-input #ENDDATE attr="ENDDATE" enabled="no" fxFlex="25"></o-date-input>
+        </o-row>
+        <o-row layout-gap="14px" layout-padding-vertical>
+          <o-combo #STATUS (onChange)="valueChange($event)" attr="STATUS" service="partes" entity="status"
+            columns="ID;DESCRIPTION" value-column="ID" keys="ID" visible-columns="DESCRIPTION" fxFlex="50">
           </o-combo>
-          <o-date-input #ENDDATE attr="ENDDATE" enabled="no" fxFlex="50"></o-date-input>
         </o-row>
         <o-row>
-          <o-textarea-input attr="COMMENTS" fxFlex></o-textarea-input>
+          <o-textarea-input attr="COMMENTS" fxFlex="40"></o-textarea-input>
         </o-row>
         <mat-tab-group>
           <mat-tab [label]="'SPENDINGS' | oTranslate">

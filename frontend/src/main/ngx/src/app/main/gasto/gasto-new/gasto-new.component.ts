@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { OFormComponent, OComboComponent, OIntegerInputComponent } from 'ontimize-web-ngx';
+import { OFormComponent, OComboComponent, OIntegerInputComponent, OCurrencyInputComponent } from 'ontimize-web-ngx';
 import { isUndefined } from 'util';
 @Component({
   selector: 'app-gasto-new',
@@ -15,7 +15,7 @@ export class GastoNewComponent implements OnInit {
   @ViewChild('AMOUNT')
   private AMOUNT: OIntegerInputComponent;
   @ViewChild('PRICE')
-  private PRICE: OIntegerInputComponent;
+  private PRICE: OCurrencyInputComponent;
   constructor() { }
   ngOnInit() {
   }

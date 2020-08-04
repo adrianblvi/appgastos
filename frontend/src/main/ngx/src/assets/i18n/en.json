@@ -34,7 +34,9 @@
   "CATEGORY":"Category",
   "AMOUNT":"Amount",
   "PRICE":"Price",
-  "SAVE_CHANGES": "Save Changes"
+  "SAVE_CHANGES": "Save Changes",
+  "TICKET":"Ticket",
+  "Add new spending":"Add new spending"
   
 
 }
