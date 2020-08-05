@@ -21,7 +21,7 @@
         </o-row>
         <mat-tab-group>
           <mat-tab [label]="'SPENDINGS' | oTranslate">
-            <o-list #list attr="spendinglist" service="gastos" entity="vGasto" keys="ID"
+            <o-list #list attr="spendinglist" service="gastos" entity="parteg" keys="ID" parent-keys="IDPARTE"
               columns="ID;CONCEPT;STARTDATE;CATEGORY;PRICE" selectable="true" insert-button="false"
               insert-button-position="top" insert-button-floatable="false" delete-button="no" quick-filter="false">
               <mat-card *ngFor="let rowData of list.dataArray" [o-list-item]="rowData">
