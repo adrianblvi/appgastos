@@ -9,8 +9,9 @@ import com.ontimize.jee.server.dao.jdbc.OntimizeJdbcDaoSupport;
 @Repository("ParteGastoDao")
 @Lazy
 @ConfigurationFile(configurationFile = "dao/PartegastoDao.xml", configurationFilePlaceholder = "dao/placeholders.properties")
-public class ParteGastoDao  extends OntimizeJdbcDaoSupport{
+public class ParteGastoDao extends OntimizeJdbcDaoSupport {
 	public static final String ATTR_ID_PARTEGASTO = "ID_PARTEGASTO";
 	public static final String ATTR_IDPARTE = "IDPARTE";
 	public static final String ATTR_IDGASTO = "IDGASTO";
+	public static final String QUERY_PARTEGASTO = "PARTEGASTO";
 }

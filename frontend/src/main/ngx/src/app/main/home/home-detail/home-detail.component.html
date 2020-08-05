@@ -65,8 +65,8 @@
         </o-row>
         <mat-tab-group>
           <mat-tab [label]="'SPENDINGS' | oTranslate">
-            <o-list #list attr="spendinglist" service="gastos" entity="vGasto" keys="ID"
-              columns="ID;CONCEPT;STARTDATE;CATEGORY;PRICE" refresh-button="true" insert-button="true"
+            <o-list #list attr="spendinglist" service="gastos" entity="parteg" keys="ID" parent-keys="IDPARTE"
+              columns="ID;CONCEPT;STARTDATE;CATEGORY;PRICE" visible-columns="CONCEPT;STARTDATE;CATEGORY;PRICE" refresh-button="true" insert-button="true"
               quick-filter="false"  insert-button-position="bottom" insert-button-floatable="false" delete-button="true"
               selectable="true" dense="false" detail-button-in-row="true" detail-button-in-row-icon="chevron_right">
               <o-list-item *ngFor="let row of list.dataArray">

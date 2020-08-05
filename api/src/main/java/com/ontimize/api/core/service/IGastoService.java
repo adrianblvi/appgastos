@@ -31,9 +31,20 @@ public interface IGastoService {
 
 	public EntityResult categoryDelete(Map<String, Object> keyMap) throws OntimizeJEERuntimeException;
 
-	public EntityResult vGastoQuery(Map<String, Object> keysValues, List<String> attributes)
-			throws OntimizeJEERuntimeException;
-
 	EntityResult gastoDetailsQuery(Map<String, Object> keyMap, List<String> attrList)
 			throws OntimizeJEERuntimeException;
+	
+	// PARTEGASTO
+	
+	public EntityResult partegastoQuery(Map<String, Object> keyMap, List<String> attrList)
+			throws OntimizeJEERuntimeException;
+
+	public EntityResult partegastoInsert(Map<String, Object> attrMap) throws OntimizeJEERuntimeException;
+
+	public EntityResult partegastoUpdate(Map<String, Object> attrMap, Map<String, Object> keyMap)
+			throws OntimizeJEERuntimeException;
+
+	public EntityResult partegastoDelete(Map<String, Object> keyMap) throws OntimizeJEERuntimeException;
+
+	EntityResult partegQuery(Map<String, Object> keyMap, List<String> attrList) throws OntimizeJEERuntimeException;
 }
