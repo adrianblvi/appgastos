@@ -11,21 +11,18 @@ export class HomeGastoNewComponent implements OnInit {
 
   @ViewChild('oForm')
   private oForm: OFormComponent;
-  @ViewChild('ID_PARTE')
-  private ID_PARTE : OIntegerInputComponent;
+  @ViewChild('IDPARTE')
+  private IDPARTE: OIntegerInputComponent;
   @ViewChild('CATEGORY')
   private CATEGORY: OComboComponent;
   @ViewChild('AMOUNT')
   private AMOUNT: OIntegerInputComponent;
   @ViewChild('PRICE')
   private PRICE: OCurrencyInputComponent;
-  constructor(private activatedRoute: ActivatedRoute) {
-    let id_aux = this.activatedRoute.snapshot.params['IDPARTE'];
-    
-  }
+  constructor(private activatedRoute: ActivatedRoute) { }
   ngOnInit() {
-    this.ID_PARTE.setValue(this.activatedRoute.snapshot.params['IDPARTE']);
-    console.log(this.ID_PARTE.getValue());
+    this.IDPARTE.setValue(this.activatedRoute.snapshot.params['IDPARTE']);
+    console.log(this.IDPARTE.getValue());
   }
   valueChange(event) {
     let a = this.CATEGORY.getSelectedRecord()['PRICE']
