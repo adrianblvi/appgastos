@@ -23,10 +23,12 @@ export class HomeDetailComponent implements OnInit {
   valueChange(event) {
     if (this.STATUS.getValue() == 1) {
       let date: Date = new Date();
-     this.ENDDATE.setValue(date.getTime());
-    }else{
+      this.ENDDATE.setValue(date.getTime());
+    } else {
       this.ENDDATE.setValue(undefined);
     }
   }
-
+  onAction1() {
+    alert('onAction1');
+  }
 }
