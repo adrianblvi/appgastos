@@ -20,5 +20,6 @@ public class GastoDao extends OntimizeJdbcDaoSupport {
 	public static final String ATTR_PRICE = "PRICE";
 	public static final String ATTR_PHOTO = "PHOTO";
 	public static final String ATTR_IDPARTE = "IDPARTE";
+	public static final String QUERY_VGASTO = "VGASTO";
 	public static final String QUERY_DETAILS = "details";
 }

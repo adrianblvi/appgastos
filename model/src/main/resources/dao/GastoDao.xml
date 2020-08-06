@@ -19,7 +19,7 @@
                SELECT
                   #COLUMNS# 
                FROM
-                  PUBLIC.PUBLIC.VGASTO
+                  PUBLIC.PUBLIC.VGASTOPARTE
                #WHERE#
                #ORDER#
             ]]>

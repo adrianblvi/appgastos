@@ -14,7 +14,6 @@ import com.ontimize.jee.common.exceptions.OntimizeJEERuntimeException;
 import com.ontimize.jee.server.dao.DefaultOntimizeDaoHelper;
 import com.ontimize.model.core.dao.CategoryDao;
 import com.ontimize.model.core.dao.GastoDao;
-import com.ontimize.model.core.dao.ParteGastoDao;
 
 @Service("GastoService")
 @Lazy
@@ -24,8 +23,6 @@ public class GastoService implements IGastoService {
 	private GastoDao gastoDao;
 	@Autowired
 	CategoryDao categoryDao;
-	@Autowired
-	ParteGastoDao partegastoDao;
 	@Autowired
 	private DefaultOntimizeDaoHelper daoHelper;
 
@@ -38,11 +35,6 @@ public class GastoService implements IGastoService {
 	@Override
 	@Transactional(rollbackFor = Exception.class)
 	public EntityResult gastoInsert(Map<String, Object> attrMap) throws OntimizeJEERuntimeException {
-		
-		for (Object entry : attrMap.entrySet()) {
-			System.out.println(entry.toString());
-		}
-//		attrMap.put(gastoDao.ATTR_ID_PARTE, value)
 		return this.daoHelper.insert(this.gastoDao, attrMap);
 	}
 
@@ -88,33 +80,14 @@ public class GastoService implements IGastoService {
 	}
 
 	@Override
-	public EntityResult partegastoQuery(Map<String, Object> keyMap, List<String> attrList)
+	public EntityResult vgastoQuery(Map<String, Object> keyMap, List<String> attrList)
 			throws OntimizeJEERuntimeException {
-		return this.daoHelper.query(this.partegastoDao, keyMap, attrList);
+		return this.daoHelper.query(this.gastoDao, keyMap, attrList, gastoDao.QUERY_VGASTO);
 	}
 
 	@Override
 	@Transactional(rollbackFor = Exception.class)
-	public EntityResult partegastoInsert(Map<String, Object> attrMap) throws OntimizeJEERuntimeException {
-		return this.daoHelper.insert(this.partegastoDao, attrMap);
-	}
-
-	@Override
-	@Transactional(rollbackFor = Exception.class)
-	public EntityResult partegastoUpdate(Map<String, Object> attrMap, Map<String, Object> keyMap)
-			throws OntimizeJEERuntimeException {
-		return this.daoHelper.update(this.partegastoDao, attrMap, keyMap);
-	}
-
-	@Override
-	@Transactional(rollbackFor = Exception.class)
-	public EntityResult partegastoDelete(Map<String, Object> keyMap) throws OntimizeJEERuntimeException {
-		return this.daoHelper.delete(this.partegastoDao, keyMap);
-	}
-
-	@Override
-	public EntityResult partegQuery(Map<String, Object> keyMap, List<String> attrList)
-			throws OntimizeJEERuntimeException {
-		return this.daoHelper.query(this.partegastoDao, keyMap, attrList, partegastoDao.QUERY_PARTEGASTO);
+	public EntityResult vgastoDelete(Map<String, Object> keyMap) throws OntimizeJEERuntimeException {
+		return this.daoHelper.delete(gastoDao, keyMap);
 	}
 }
