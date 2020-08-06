@@ -17,8 +17,21 @@
       <o-row>
         <o-textarea-input attr="COMMENTS" fxFlex></o-textarea-input>
       </o-row>
-      <o-row title="{{'SPENDINGS' | oTranslate}}" icon="euro_symbol">
-        <!--<o-button attr="icon" type="FAB-MINI" icon="add" layout-padding></o-button>-->
+      <o-row>
+        <mat-tab-group>
+          <mat-tab [label]="'SPENDINGS' | oTranslate">
+            <o-list #list attr="spendinglist" service="gastos" entity="vgasto" keys="ID" parent-keys="IDPARTE"
+              columns="ID;CONCEPT;STARTDATE;PRICE" visible-columns="CONCEPT;STARTDATE;PRICE" refresh-button="true"
+              insert-button="true" quick-filter="false" insert-button-position="bottom" insert-button-floatable="false"
+              delete-button="true" selectable="true" dense="false" detail-button-in-row="true"
+              detail-button-in-row-icon="chevron_right">
+              <o-list-item *ngFor="let row of list.dataArray">
+                <o-list-item-text #item title="{{ row.CONCEPT }}" primary-text="{{ row.STARTDATE | date}}">
+                </o-list-item-text>
+              </o-list-item>
+            </o-list>
+          </mat-tab>
+        </mat-tab-group>
       </o-row>
     </o-column>
   </o-row>

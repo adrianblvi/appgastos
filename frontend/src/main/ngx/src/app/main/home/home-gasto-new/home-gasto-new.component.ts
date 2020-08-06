@@ -21,8 +21,12 @@ export class HomeGastoNewComponent implements OnInit {
   private PRICE: OCurrencyInputComponent;
   constructor(private activatedRoute: ActivatedRoute) { }
   ngOnInit() {
-    this.IDPARTE.setValue(this.activatedRoute.snapshot.params['IDPARTE']);
-    console.log(this.IDPARTE.getValue());
+    if (!(this.activatedRoute.snapshot.params['IDPARTE'] == 'new')) {
+      this.IDPARTE.setValue(this.activatedRoute.snapshot.params['IDPARTE']);
+    } else {
+      console.log("nuevo");
+    }
+
   }
   valueChange(event) {
     let a = this.CATEGORY.getSelectedRecord()['PRICE']
