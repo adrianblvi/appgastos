@@ -37,7 +37,8 @@
   "SAVE_CHANGES": "Save Changes",
   "TICKET":"Ticket",
   "Add new spending":"Add new spending",
-  "ticket file":" Purchase receipt"
+  "ticket file":" Purchase receipt",
+  "No hay gastos": "No associated expense"
   
 
 }

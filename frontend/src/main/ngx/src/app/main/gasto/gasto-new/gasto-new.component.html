@@ -30,8 +30,11 @@
           </o-row>
           <o-row>
             <mat-icon class="icon"></mat-icon>
-            <o-file-input attr="PHOTO" icon="camera_alt" accept="image/*" capture="camera"
-              fxFlex="40"></o-file-input>
+            <!--<o-image  attr="PHOTO" icon="camera_alt" accept="image/*"
+              capture="enviroment" fxFlex="40">
+            </o-image>-->
+            <o-file-input #PHOTO (onChange)="photoChange($event)" attr="PHOTO" icon="camera_alt" accept="image/*"
+              capture="camera" fxFlex="40"></o-file-input>
           </o-row>
         </o-column>
       </mat-tab>

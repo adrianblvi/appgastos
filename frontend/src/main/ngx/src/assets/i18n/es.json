@@ -37,6 +37,7 @@
   "SAVE_CHANGES": "Guardar Cambios",
   "TICKET":"Recibo",
   "Add new spending":"Añadir nuevo gasto",
-  "Upload ticket file":"Ticket de compra"
+  "Upload ticket file":"Ticket de compra",
+  "No hay gastos":"Ningún gasto asociado"
 
 }
