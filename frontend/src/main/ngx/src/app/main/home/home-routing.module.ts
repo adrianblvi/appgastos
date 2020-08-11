@@ -13,11 +13,11 @@ const routes: Routes = [
     path: ':IDPARTE/new',
     component: HomeGastoNewComponent
   }, {
-    path: 'new',
-    component: HomeNewComponent
-  }, {
     path: ':IDPARTE/:ID',
     component: HomeGastoDetailComponent
+  }, {
+    path: 'new',
+    component: HomeNewComponent
   }, {
     path: ':IDPARTE',
     component: HomeDetailComponent

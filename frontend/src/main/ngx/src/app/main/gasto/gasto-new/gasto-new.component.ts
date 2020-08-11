@@ -20,39 +20,40 @@ export class GastoNewComponent implements OnInit {
   private PRICE: OCurrencyInputComponent;
   @ViewChild('PHOTO')
   private PHOTO: OImageComponent;
+  private a: number;
+
   constructor() { }
   ngOnInit() {
   }
 
   valueChange(event) {
-    let a = this.CATEGORY.getSelectedRecord()['PRICE']
-    if (isUndefined(a)) {
+    if (isUndefined(this.CATEGORY.getSelectedRecord()['PRICE'])) {
       this.AMOUNT.enabled = "no";
       this.AMOUNT.setValue(undefined);
     } else {
+      this.a = this.CATEGORY.getSelectedRecord()['PRICE']
       this.AMOUNT.enabled = "yes";
-      this.PRICE.setValue(a);
+      this.PRICE.setValue(this.a);
     }
   }
   amountChange(event) {
-    let a = this.CATEGORY.getSelectedRecord()['PRICE']
-    if (!(typeof a === "undefined")) {
-      this.PRICE.setValue(this.AMOUNT.getValue() * a);
+    if (!isUndefined(this.a)) {
+      this.PRICE.setValue(this.AMOUNT.getValue() * this.a);
     } else {
       this.PRICE.setValue(0);
     }
   }
 
   photoChange(event) {
-    if(!(isUndefined(this.PHOTO.getValue()))){
+    if (!(isUndefined(this.PHOTO.getValue()))) {
       console.log(this.PHOTO.getSrcValue);
       this.test();
     }
-    
+
   }
   test() {
-    Tesseract.recognize('assets/images/TICKET.png').then(function (result) {
-     console.log(result.text);
+    Tesseract.recognize('assets/images/tren.jpg').then(function (result) {
+      console.log(result.text);
     });
   }
 }

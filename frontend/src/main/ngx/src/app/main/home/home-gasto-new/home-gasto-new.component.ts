@@ -19,33 +19,35 @@ export class HomeGastoNewComponent implements OnInit {
   private AMOUNT: OIntegerInputComponent;
   @ViewChild('PRICE')
   private PRICE: OCurrencyInputComponent;
+  private a: number;
+
   constructor(private activatedRoute: ActivatedRoute) { }
   ngOnInit() {
     if (!(this.activatedRoute.snapshot.params['IDPARTE'] == 'new')) {
+      console.log("nonuevo");
       this.IDPARTE.setValue(this.activatedRoute.snapshot.params['IDPARTE']);
     } else {
-      console.log("nuevo");
+      console.log("Nuevo");
+      console.log(this.IDPARTE.getValue());
     }
 
   }
   valueChange(event) {
-    let a = this.CATEGORY.getSelectedRecord()['PRICE']
-    if (isUndefined(a)) {
+    if (isUndefined(this.CATEGORY.getSelectedRecord()['PRICE'])) {
       this.AMOUNT.enabled = "no";
       this.AMOUNT.setValue(undefined);
     } else {
+      this.a = this.CATEGORY.getSelectedRecord()['PRICE']
       this.AMOUNT.enabled = "yes";
-      this.PRICE.setValue(a);
+      this.PRICE.setValue(this.a);
     }
   }
   amountChange(event) {
-    let a = this.CATEGORY.getSelectedRecord()['PRICE']
-    if (!(typeof a === "undefined")) {
-      this.PRICE.setValue(this.AMOUNT.getValue() * a);
+    if (!isUndefined(this.a)) {
+      this.PRICE.setValue(this.AMOUNT.getValue() * this.a);
     } else {
       this.PRICE.setValue(0);
     }
 
   }
-
 }

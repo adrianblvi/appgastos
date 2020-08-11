@@ -35,6 +35,10 @@ public class ParteService implements IParteService {
 	@Override
 	@Transactional(rollbackFor = Exception.class)
 	public EntityResult parteInsert(Map<String, Object> attrMap) throws OntimizeJEERuntimeException {
+		System.out.println("Aqui?");
+		for (Object query : attrMap.entrySet()) {
+			System.out.println(query.toString());
+		}
 		return this.daoHelper.insert(this.parteDao, attrMap);
 	}
 
@@ -42,15 +46,6 @@ public class ParteService implements IParteService {
 	@Transactional(rollbackFor = Exception.class)
 	public EntityResult parteUpdate(Map<String, Object> attrMap, Map<String, Object> keyMap)
 			throws OntimizeJEERuntimeException {
-//		this.daoHelper.update(this.parteDao, attrMap, keyMap);
-//		ArrayList<String> list = new ArrayList<String>();
-//		list.add(parteDao.ATTR_STATUS);
-//		EntityResult query = this.daoHelper.query(this.parteDao, keyMap, list, parteDao.QUERY_DETAILS);
-//		Object newStatus = query.get(parteDao.ATTR_STATUS);
-//		if (newStatus.toString().trim().equals("[Cerrado]")) {
-//			Calendar endDate = GregorianCalendar.getInstance();
-//			 attrMap.put(parteDao.ATTR_ENDDATE, endDate.getTime());
-//		}
 		return this.daoHelper.update(this.parteDao, attrMap, keyMap);
 	}
 
@@ -90,7 +85,5 @@ public class ParteService implements IParteService {
 			throws OntimizeJEERuntimeException {
 		return this.daoHelper.query(this.parteDao, keyMap, attrList, parteDao.QUERY_DETAILS);
 	}
-
-	
 
 }

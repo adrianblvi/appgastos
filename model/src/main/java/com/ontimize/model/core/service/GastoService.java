@@ -35,6 +35,10 @@ public class GastoService implements IGastoService {
 	@Override
 	@Transactional(rollbackFor = Exception.class)
 	public EntityResult gastoInsert(Map<String, Object> attrMap) throws OntimizeJEERuntimeException {
+		System.out.println("EStoy");
+		for (Object query : attrMap.entrySet()) {
+			System.out.println(query.toString());
+		}
 		return this.daoHelper.insert(this.gastoDao, attrMap);
 	}
 
