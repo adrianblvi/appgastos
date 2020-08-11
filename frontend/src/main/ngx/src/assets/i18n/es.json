@@ -38,6 +38,7 @@
   "TICKET":"Recibo",
   "Add new spending":"Añadir nuevo gasto",
   "Upload ticket file":"Ticket de compra",
-  "No hay gastos":"Ningún gasto asociado"
+  "No hay gastos":"Ningún gasto asociado",
+  "DARK_MODE":"Modo Oscuro"
 
 }

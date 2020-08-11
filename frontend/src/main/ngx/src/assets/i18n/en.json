@@ -38,7 +38,8 @@
   "TICKET":"Ticket",
   "Add new spending":"Add new spending",
   "ticket file":" Purchase receipt",
-  "No hay gastos": "No associated expense"
+  "No hay gastos": "No associated expense",
+  "DARK_MODE":"Dark Mode"
   
 
 }

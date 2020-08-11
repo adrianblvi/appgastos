@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild, Inject } from '@angular/core';
-
+import { ThemeService } from './shared/theme.service';
+import { Util } from 'ontimize-web-ngx';
 @Component({
   selector: 'o-app',
   templateUrl: './app.component.html',
@@ -7,7 +8,16 @@ import { Component, OnInit, ViewChild, Inject } from '@angular/core';
 })
 export class AppComponent implements OnInit {
 
-  constructor() {
+  constructor(
+    private _themeService: ThemeService
+  ) {
+    const theme = this._themeService.getStoredTheme();
+    if (!Util.isDefined(theme)) {
+      this._themeService.currentTheme = this._themeService.getDefaultTheme();
+      this._themeService.storeTheme(this._themeService.currentTheme);
+    } else {
+      this._themeService.installTheme(theme);
+    }
   }
 
   ngOnInit() {

@@ -10,10 +10,13 @@ import {
 import { CONFIG } from './app.config';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-
+import { StyleManager } from './shared/style-manager/style-manager';
+import { ThemeService } from './shared/theme.service';
 // Standard providers...
 // Defining custom providers (if needed)...
 export const customProviders: any = [
+  StyleManager,
+  ThemeService
 ];
 
 @NgModule({
