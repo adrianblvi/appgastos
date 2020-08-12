@@ -44,16 +44,16 @@ export class GastoNewComponent implements OnInit {
     }
   }
 
-  photoChange(event) {
-    if (!(isUndefined(this.PHOTO.getValue()))) {
-      console.log(this.PHOTO.getSrcValue);
-      this.test();
-    }
-
-  }
-  test() {
-    Tesseract.recognize('assets/images/tren.jpg').then(function (result) {
-      console.log(result.text);
-    });
-  }
+  /* photoChange(event) {
+     if (!(isUndefined(this.PHOTO.getValue()))) {
+       console.log(this.PHOTO.getSrcValue);
+       this.test();
+     }
+ (onChange)="photoChange($event)"
+   }
+   test() {
+     Tesseract.recognize('assets/images/tren.jpg').then(function (result) {
+       console.log(result.text);
+     });
+   }*/
 }
