@@ -21,21 +21,21 @@ export class ThemeService {
     {
       primary: '#0d0d0d',
       accent: '#ffad00',
-      href: 'ontimize.css',
-      href_dark: 'ontimize-dark.css',
+      href: 'ontimize.scss',
+      href_dark: 'ontimize-dark.scss',
       isDefault: true
     },
     {
       primary: '#464f64',
       accent: '#ffcc00',
-      href: 'qs-blue-yellow.css',
-      href_dark: 'qs-blue-yellow-dark.css',
+      href: 'qs-blue-yellow.scss',
+      href_dark: 'qs-blue-yellow-dark.scss',
     },
     {
       primary: '#607d8b',
       accent: '#7daa4c',
-      href: 'qs-gray-green.css',
-      href_dark: 'qs-gray-green-dark.css'
+      href: 'qs-gray-green.scss',
+      href_dark: 'qs-gray-green-dark.scss'
     }
   ];
   public currentTheme: DocsSiteTheme;
