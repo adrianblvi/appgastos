@@ -1,39 +1,17 @@
-<o-form service="partes" entity="parte" keys="IDPARTE" header-actions="R;U;D" show-header-navigation="no">
-  <!--<o-text-input #ids attr="IDPARTE" sql-type="INTEGER" enabled="no" fxFlex></o-text-input>-->
+<o-form service="partes" entity="parte" keys="IDPARTE" header-actions="R;D" show-header-navigation="no">
   <o-row>
     <o-column title-label="PARTE INFORMATION" fxFlex>
       <o-row>
-        <o-text-input class="input-padding" attr="DESCRIPTION" fxFlex="50" required="yes"></o-text-input>
-      </o-row>
-      <o-row layout-gap="14px" layout-padding-vertical>
-        <o-date-input attr="STARTDATE" required="yes" fxFlex="25"></o-date-input>
-        <o-date-input attr="ENDDATE" enabled="no" fxFlex="25"></o-date-input>
+        <o-text-input class="input-padding" attr="DESCRIPTION" fxFlex="75" required="yes"></o-text-input>
       </o-row>
       <o-row>
-        <o-combo attr="STATUS" service="partes" entity="status" columns="ID;DESCRIPTION" value-column="ID" keys="ID"
-          visible-columns="DESCRIPTION" fxFlex="50" required="yes">
-        </o-combo>
+        <o-date-input attr="STARTDATE" required="yes" fxFlex="75"></o-date-input>
       </o-row>
       <o-row>
-        <o-textarea-input attr="COMMENTS" fxFlex="50"></o-textarea-input>
+        <o-date-input #ENDDATE attr="ENDDATE" required="yes" fxFlex="75"></o-date-input>
       </o-row>
       <o-row>
-        <div fxFlex>
-          <mat-tab-group>
-            <mat-tab [label]="'SPENDINGS' | oTranslate">
-              <o-list #list attr="spendinglist" service="gastos" entity="vgasto" keys="ID" parent-keys="IDPARTE"
-                columns="ID;CONCEPT;STARTDATE;PRICE" visible-columns="CONCEPT;STARTDATE;PRICE" refresh-button="true"
-                insert-button="true" quick-filter="false" insert-button-position="bottom"
-                insert-button-floatable="false" delete-button="true" selectable="true" dense="false"
-                detail-button-in-row="true" detail-button-in-row-icon="chevron_right">
-                <o-list-item *ngFor="let row of list.dataArray">
-                  <o-list-item-text #item title="{{ row.CONCEPT }}" primary-text="{{ row.STARTDATE | date}}">
-                  </o-list-item-text>
-                </o-list-item>
-              </o-list>
-            </mat-tab>
-          </mat-tab-group>
-        </div>
+        <o-textarea-input attr="COMMENTS" fxFlex="75"></o-textarea-input>
       </o-row>
     </o-column>
   </o-row>

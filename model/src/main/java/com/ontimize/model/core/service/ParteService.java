@@ -35,10 +35,6 @@ public class ParteService implements IParteService {
 	@Override
 	@Transactional(rollbackFor = Exception.class)
 	public EntityResult parteInsert(Map<String, Object> attrMap) throws OntimizeJEERuntimeException {
-		System.out.println("Aqui?");
-		for (Object query : attrMap.entrySet()) {
-			System.out.println(query.toString());
-		}
 		return this.daoHelper.insert(this.parteDao, attrMap);
 	}
 
