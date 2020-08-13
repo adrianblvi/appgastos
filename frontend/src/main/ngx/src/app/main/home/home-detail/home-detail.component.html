@@ -1,4 +1,4 @@
-<o-form #oForm service="partes" entity="parte" keys="IDPARTE" header-actions="R;U;D" layout-align="center"
+<o-form #oForm service="partes" entity="parte" keys="IDPARTE" header-actions="U;D" layout-align="center"
   show-header-navigation="no">
   <o-text-input attr="IDPARTE" sql-type="INTEGER" enabled="no" fxFlex></o-text-input>
   <div class="text" *ngIf="oForm.getDataValue('ENDDATE').value; else elseBlock">

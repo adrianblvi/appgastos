@@ -39,6 +39,8 @@
   "Add new spending":"Añadir nuevo gasto",
   "Upload ticket file":"Ticket de compra",
   "No hay gastos":"Ningún gasto asociado",
-  "DARK_MODE":"Modo Oscuro"
+  "DARK_MODE":"Modo Oscuro",
+  "LANG_en": "Inglés",
+  "LANG_es": "Español"
 
 }

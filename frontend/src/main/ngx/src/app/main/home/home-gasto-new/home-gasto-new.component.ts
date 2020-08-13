@@ -29,7 +29,7 @@ export class HomeGastoNewComponent implements OnInit {
     } else {
       console.log("Nuevo");
       console.log(this.IDPARTE.getValue());
-      this.IDPARTE.setValue(undefined);
+      this.IDPARTE.setValue(null);
     }
 
   }

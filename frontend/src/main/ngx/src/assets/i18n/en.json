@@ -39,7 +39,9 @@
   "Add new spending":"Add new spending",
   "ticket file":" Purchase receipt",
   "No hay gastos": "No associated expense",
-  "DARK_MODE":"Dark Mode"
+  "DARK_MODE":"Dark Mode",
+  "LANG_en": "English",
+  "LANG_es": "Spanish"
   
 
 }
