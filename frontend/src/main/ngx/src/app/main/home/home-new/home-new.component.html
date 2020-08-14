@@ -5,10 +5,14 @@
         <o-text-input class="input-padding" attr="DESCRIPTION" fxFlex="75" required="yes"></o-text-input>
       </o-row>
       <o-row>
-        <o-date-input attr="STARTDATE" required="yes" fxFlex="75"></o-date-input>
+        <o-integer-input #STATUS type="hidden" [hidden]="true" attr="STATUS"></o-integer-input>
       </o-row>
       <o-row>
-        <o-date-input #ENDDATE attr="ENDDATE" required="yes" fxFlex="75"></o-date-input>
+        <o-date-input #STARTDATE (onChange)="dateChange($event)" attr="STARTDATE" required="yes" fxFlex="75">
+        </o-date-input>
+      </o-row>
+      <o-row>
+        <o-date-input #ENDDATE (onChange)="dateChange($event)" attr="ENDDATE" required="yes" fxFlex="75"></o-date-input>
       </o-row>
       <o-row>
         <o-textarea-input attr="COMMENTS" fxFlex="75"></o-textarea-input>

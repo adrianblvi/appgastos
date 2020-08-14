@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { OFormComponent, OComboComponent, ODateInputComponent } from 'ontimize-web-ngx';
+import { OFormComponent, ODateInputComponent, OIntegerInputComponent } from 'ontimize-web-ngx';
 
 @Component({
   selector: 'app-home-detail',
@@ -11,24 +11,37 @@ export class HomeDetailComponent implements OnInit {
   @ViewChild('oForm')
   private oForm: OFormComponent;
   @ViewChild('STATUS')
-  private STATUS: OComboComponent;
+  private STATUS: OIntegerInputComponent;
+  @ViewChild('STARTDATE')
+  private STARTDATE: ODateInputComponent;
   @ViewChild('ENDDATE')
-  ENDDATE: ODateInputComponent;
-
-
+  private ENDDATE: ODateInputComponent;
   constructor() {
   }
   ngOnInit() {
   }
-  valueChange(event) {
-    if (this.STATUS.getValue() == 1) {
-      let date: Date = new Date();
-      this.ENDDATE.setValue(date.getTime());
-    } else {
-      this.ENDDATE.setValue(undefined);
-    }
+  getStatus() {
+    let status = this.STATUS.getValue();
+    console.log(status);
+    return;
+    /*switch (status) {
+      case 0:
+        console.log("SIN ENVIAR");
+        return false;
+      case 1:
+        console.log("ENVIADO");
+        return false;
+      case 2:
+        console.log("ACEPTADO");
+        return false;
+      case 3:
+        console.log("RECHAZADO");
+        return true;
+    }*/
   }
-  onAction1() {
-    alert('onAction1');
+  dateChange(event) {
+    if (this.ENDDATE.getValue() < this.STARTDATE.getValue()) {
+      alert("La fecha fin debe ser posterior a la fecha inicio");
+    }
   }
 }

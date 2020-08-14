@@ -16,5 +16,6 @@ public class ParteDao extends OntimizeJdbcDaoSupport {
 	public static final String ATTR_COMMENTS = "COMMENTS";
 	public static final String ATTR_STATUS = "STATUS";
 	public static final String ATTR_ENDDATE = "ENDDATE";
+	public static final String ATTR_OBSERVATIONS = "OBSERVATIONS";
 	public static final String QUERY_DETAILS = "details";
 }
