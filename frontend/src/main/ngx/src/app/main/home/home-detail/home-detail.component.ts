@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { OFormComponent, ODateInputComponent, OIntegerInputComponent } from 'ontimize-web-ngx';
+import { OFormComponent, ODateInputComponent, OIntegerInputComponent, OTextInputComponent } from 'ontimize-web-ngx';
 
 @Component({
   selector: 'app-home-detail',

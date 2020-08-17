@@ -2,8 +2,10 @@
   <o-row>
     <div fxFlex>
       <o-list #list attr="parteslist" service="partes" entity="parteDetails" keys="IDPARTE" header-mode="floating"
-        columns="IDPARTE;DESCRIPTION;STARTDATE;COMMENTS;STATUS;ENDDATE" delete-button="no" insert-button="true"
-        insert-button-position="top" insert-button-floatable="false" quick-filter-columns="DESCRIPTION">
+        columns="IDPARTE;DESCRIPTION;STARTDATE;COMMENTS;STATUS;ENDDATE"
+        visible-colums="IDPARTE;DESCRIPTION;STARTDATE;STATUS" sort-colums="STARTDATE" delete-button="no"
+        insert-button="true" insert-button-position="top" insert-button-floatable="false"
+        quick-filter-columns="DESCRIPTION">
         <mat-card class="list" *ngFor="let rowData of list.dataArray" [o-list-item]="rowData">
           <mat-card-header>
             <mat-card-title><strong>

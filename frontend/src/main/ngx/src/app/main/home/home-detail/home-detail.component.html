@@ -1,16 +1,11 @@
-<o-form #oForm service="partes" entity="parte" keys="IDPARTE" header-actions="U;D" show-header-actions-text="no"
-  layout-align="center" show-header-navigation="no">
+<o-form #oForm service="partes" entity="parte"
+  columns="IDPARTE;DESCRIPTION;STARTDATE,ENDDATE;STATUS;COMMENTS;OBSERVATIONS" keys="IDPARTE" header-actions="U;D"
+  show-header-actions-text="no" layout-align="center" show-header-navigation="no">
   <o-text-input class="text" attr="IDPARTE" sql-type="INTEGER" enabled="no" fxFlex></o-text-input>
   <o-row>
     <o-column>
       <o-row>
         <o-integer-input #STATUS type="hidden" [hidden]="true" attr="STATUS"></o-integer-input>
-        <!--<div *ngIf="getStatus()">
-          {{'Parte rechazado'|oTranslate}}:
-          <o-row>
-            <o-text-input class="text" attr="OBSERVATIONS" fxFlex="70"></o-text-input>
-          </o-row>
-        </div>-->
       </o-row>
       <o-row>
         <o-text-input class="text" attr="DESCRIPTION" fxFlex="70" enabled="yes" required="yes">
@@ -29,8 +24,7 @@
       </o-row>
       <div *ngIf="oForm.getDataValue('OBSERVATIONS').value">
         <o-row>
-          <o-text-input class=" text" attr="OBSERVATIONS" fxFlex="70">
-          </o-text-input>
+          <o-text-input class="text" attr="OBSERVATIONS" enabled="yes" fxFlex="70"></o-text-input>
         </o-row>
       </div>
       <mat-tab-group>

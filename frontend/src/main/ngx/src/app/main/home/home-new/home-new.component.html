@@ -2,7 +2,8 @@
   <o-row>
     <o-column title-label="PARTE INFORMATION" fxFlex>
       <o-row>
-        <o-text-input class="input-padding" attr="DESCRIPTION" fxFlex="75" required="yes"></o-text-input>
+        <o-text-input class="input-padding" attr="DESCRIPTION" fxFlex="75" clear-button="yes" required="yes">
+        </o-text-input>
       </o-row>
       <o-row>
         <o-integer-input #STATUS type="hidden" [hidden]="true" attr="STATUS"></o-integer-input>
