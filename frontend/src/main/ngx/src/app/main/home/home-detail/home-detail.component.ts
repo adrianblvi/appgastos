@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { OFormComponent, ODateInputComponent, OIntegerInputComponent, OTextInputComponent } from 'ontimize-web-ngx';
+import { OFormComponent, ODateInputComponent, OIntegerInputComponent, OTextInputComponent, OTextareaInputComponent } from 'ontimize-web-ngx';
 
 @Component({
   selector: 'app-home-detail',
@@ -10,34 +10,36 @@ export class HomeDetailComponent implements OnInit {
 
   @ViewChild('oForm')
   private oForm: OFormComponent;
+  @ViewChild('DESCRIPTION')
+  private DESCRIPTION: OTextInputComponent;
   @ViewChild('STATUS')
   private STATUS: OIntegerInputComponent;
   @ViewChild('STARTDATE')
   private STARTDATE: ODateInputComponent;
   @ViewChild('ENDDATE')
   private ENDDATE: ODateInputComponent;
+  @ViewChild('COMMENTS')
+  private COMMENTS: OTextareaInputComponent;
+
   constructor() {
   }
   ngOnInit() {
+
   }
-  getStatus() {
-    let status = this.STATUS.getValue();
-    console.log(status);
-    return;
-    /*switch (status) {
-      case 0:
-        console.log("SIN ENVIAR");
-        return false;
-      case 1:
-        console.log("ENVIADO");
-        return false;
-      case 2:
-        console.log("ACEPTADO");
-        return false;
-      case 3:
-        console.log("RECHAZADO");
-        return true;
-    }*/
+  onFormDataLoaded(event) {
+    if (!(this.oForm.getDataValue('STATUS').value == 0 || this.oForm.getDataValue('STATUS').value == 3)) {
+      this.DESCRIPTION.enabled = "no";
+      this.STARTDATE.enabled = "no";
+      this.ENDDATE.enabled = "no";
+      this.COMMENTS.enabled = "no";
+    }
+  }
+  onClick(event) {
+    this.STATUS.setValue('1');
+    this.DESCRIPTION.enabled = "no";
+    this.STARTDATE.enabled = "no";
+    this.ENDDATE.enabled = "no";
+    this.COMMENTS.enabled = "no";
   }
   dateChange(event) {
     if (this.ENDDATE.getValue() < this.STARTDATE.getValue()) {
