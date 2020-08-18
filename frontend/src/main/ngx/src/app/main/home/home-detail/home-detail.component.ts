@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { OFormComponent, ODateInputComponent, OIntegerInputComponent, OTextInputComponent, OTextareaInputComponent } from 'ontimize-web-ngx';
+import { isUndefined } from 'util';
 
 @Component({
   selector: 'app-home-detail',
@@ -20,6 +21,8 @@ export class HomeDetailComponent implements OnInit {
   private ENDDATE: ODateInputComponent;
   @ViewChild('COMMENTS')
   private COMMENTS: OTextareaInputComponent;
+  @ViewChild('OBSERVATIONS')
+  private OBSERVATIONS: OTextInputComponent;
 
   constructor() {
   }
@@ -32,10 +35,17 @@ export class HomeDetailComponent implements OnInit {
       this.STARTDATE.enabled = "no";
       this.ENDDATE.enabled = "no";
       this.COMMENTS.enabled = "no";
+    } else {
+      if (!isUndefined(this.oForm.getDataValue('OBSERVATIONS').value)) {
+        console.log(this.oForm.getDataValue('OBSERVATIONS').value);
+      }
     }
   }
   onClick(event) {
     this.STATUS.setValue('1');
+    if (!isUndefined(this.OBSERVATIONS)) {
+      this.OBSERVATIONS.setValue(undefined);
+    }
     this.DESCRIPTION.enabled = "no";
     this.STARTDATE.enabled = "no";
     this.ENDDATE.enabled = "no";
