@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 @Component({
   selector: 'app-home-gasto-detail',
   templateUrl: './home-gasto-detail.component.html',

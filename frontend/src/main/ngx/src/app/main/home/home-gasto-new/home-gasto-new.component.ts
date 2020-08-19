@@ -24,12 +24,7 @@ export class HomeGastoNewComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute) { }
   ngOnInit() {
     if (!(this.activatedRoute.snapshot.params['IDPARTE'] == 'new')) {
-      console.log("nonuevo");
       this.IDPARTE.setValue(this.activatedRoute.snapshot.params['IDPARTE']);
-    } else {
-      console.log("Nuevo");
-      console.log(this.IDPARTE.getValue());
-      this.IDPARTE.setValue(null);
     }
 
   }

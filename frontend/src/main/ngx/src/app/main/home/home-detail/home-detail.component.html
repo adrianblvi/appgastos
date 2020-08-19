@@ -25,12 +25,10 @@
         <o-textarea-input #COMMENTS class="text" attr="COMMENTS" enabled="yes" fxFlex="85">
         </o-textarea-input>
       </o-row>
-      <div *ngIf=" ((oForm.getDataValue('STATUS').value )=== 3 )">
-        <o-row>
-          <o-text-input #OBSERVATIONS class="text" attr="OBSERVATIONS" style="color:red;" enabled="no" fxFlex="85">
-          </o-text-input>
-        </o-row>
-      </div>
+      <o-row>
+        <o-text-input #OBSERVATIONS  [style.display]="isVisible?'block':'none'" class="text" attr="OBSERVATIONS" enabled="no" >
+        </o-text-input>
+      </o-row>
 
       <div
         *ngIf="((oForm.getDataValue('STATUS').value )=== 0 )||((oForm.getDataValue('STATUS').value )=== 3) ;else elseBlock">
