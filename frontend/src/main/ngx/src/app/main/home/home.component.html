@@ -3,19 +3,37 @@
     <div fxFlex>
       <o-list #list attr="parteslist" service="partes" entity="parteDetails" keys="IDPARTE" header-mode="floating"
         columns="IDPARTE;DESCRIPTION;STARTDATE;COMMENTS;STATUS;ENDDATE"
-        visible-colums="IDPARTE;DESCRIPTION;STARTDATE;STATUS"  delete-button="no" insert-button="true"
-        insert-button-position="top" insert-button-floatable="false" quick-filter-columns="DESCRIPTION">
+        visible-colums="IDPARTE;DESCRIPTION;STARTDATE;ENDDATE;STATUS" sortable-columns="STARTDATE"
+        sort-column="STARTDATE" delete-button="no" insert-button="true" insert-button-position="top"
+        insert-button-floatable="false" quick-filter-columns="DESCRIPTION">
         <mat-card class="list" *ngFor="let rowData of list.dataArray" [o-list-item]="rowData">
           <mat-card-header>
             <mat-card-title><strong>
                 <font size=3>{{ rowData.DESCRIPTION }}</font>
               </strong></mat-card-title>
-            <mat-card-subtitle>ID:{{rowData.IDPARTE}}</mat-card-subtitle>
           </mat-card-header>
           <mat-card-content>
             <o-column>
-              {{'STARTDATE' | oTranslate }}: {{ rowData.STARTDATE | date  }}
-              <p>{{'STATUS' | oTranslate}}: {{ rowData.STATUS }}</p>
+              <span>
+                <mat-icon color="accent">today </mat-icon>{{ rowData.STARTDATE | date  }} -
+                {{ rowData.ENDDATE | date  }}
+              </span>
+              <span mat-line *ngIf="(rowData.STATUS )=== 'Sin enviar'">
+                <mat-icon mat-list-icon [ngStyle]="{'color':'grey'}">assignment_late</mat-icon>
+                {{ rowData.STATUS }}
+              </span>
+              <span mat-line *ngIf="(rowData.STATUS )=== 'Enviado'">
+                <mat-icon mat-list-icon color="accent">cloud_upload</mat-icon>
+                {{ rowData.STATUS }}
+              </span>
+              <span mat-line *ngIf="(rowData.STATUS )=== 'Aceptado'">
+                <mat-icon mat-list-icon [ngStyle]="{'color':'green'}">done</mat-icon>
+                {{ rowData.STATUS }}
+              </span>
+              <span mat-line *ngIf="(rowData.STATUS )=== 'Rechazado'">
+                <mat-icon mat-list-icon color="warn">clear</mat-icon>
+                {{ rowData.STATUS }}
+              </span>
             </o-column>
           </mat-card-content>
         </mat-card>

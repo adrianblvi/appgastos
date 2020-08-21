@@ -17,15 +17,18 @@ export class HomeNewComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.STATUS.setValue('0');
+    
   }
   dateChange(event) {
     if (!(isUndefined(this.STARTDATE.getValue()))) {
       if (!(isUndefined(this.ENDDATE.getValue()))) {
         if (this.ENDDATE.getValue() < this.STARTDATE.getValue()) {
           alert("La fecha fin debe ser posterior a la fecha inicio");
+          this.ENDDATE.setValue(undefined);
         }
       }
     }
+    this.STATUS.setValue('0');
+    console.log(this.STATUS.getValue())
   }
 }

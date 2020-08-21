@@ -38,9 +38,7 @@ export class HomeDetailComponent implements OnInit {
       this.COMMENTS.enabled = "no";
     } else {
 
-      this.isVisible = this.oForm.getDataValue('STATUS').value == 3
-      //console.log()
-
+      this.isVisible = this.oForm.getDataValue('STATUS').value == 3;
     }
   }
   onClick(event) {
