@@ -17,7 +17,7 @@ export class HomeNewComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    
+
   }
   dateChange(event) {
     if (!(isUndefined(this.STARTDATE.getValue()))) {
@@ -29,6 +29,5 @@ export class HomeNewComponent implements OnInit {
       }
     }
     this.STATUS.setValue('0');
-    console.log(this.STATUS.getValue())
   }
 }

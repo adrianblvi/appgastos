@@ -26,12 +26,12 @@
         </o-textarea-input>
       </o-row>
       <o-row>
-        <o-text-input #OBSERVATIONS  [style.display]="isVisible?'block':'none'" class="text" attr="OBSERVATIONS" enabled="no" >
+        <o-text-input #OBSERVATIONS [style.display]="isVisible?'block':'none'" class="text" attr="OBSERVATIONS"
+          enabled="no">
         </o-text-input>
       </o-row>
 
-      <div
-        *ngIf="((oForm.getDataValue('STATUS').value )=== 0 )||((oForm.getDataValue('STATUS').value )=== 3) ;else elseBlock">
+      <div *ngIf="toSend|| isVisible ;else elseBlock">
         <mat-tab-group>
           <mat-tab [label]="'SPENDINGS' | oTranslate">
             <div fxFlex>
@@ -68,7 +68,7 @@
         </mat-tab-group>
       </ng-template>
       <o-row>
-        <div *ngIf="((oForm.getDataValue('STATUS').value )=== 0 )||((oForm.getDataValue('STATUS').value )=== 3)">
+        <div *ngIf="toSend|| isVisible ">
           <o-row>
             <o-button class="button" attr="stroked" type="STROKED" icon="send" icon-position="left" label="ENVIAR PARTE"
               (click)="onClick($event)">

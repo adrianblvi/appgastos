@@ -26,7 +26,8 @@
 						PUBLIC.PARTE O
 					INNER JOIN PUBLIC.STATUS OS
 						ON O.STATUS = OS.ID
-					#WHERE# 
+					#WHERE#
+					#ORDER#
 				 ]]>
 			 </Sentence>
 		</Query>

@@ -3,9 +3,9 @@
     <div fxFlex>
       <o-list #list attr="parteslist" service="partes" entity="parteDetails" keys="IDPARTE" header-mode="floating"
         columns="IDPARTE;DESCRIPTION;STARTDATE;COMMENTS;STATUS;ENDDATE"
-        visible-colums="IDPARTE;DESCRIPTION;STARTDATE;ENDDATE;STATUS" sortable-columns="STARTDATE"
-        sort-column="STARTDATE" delete-button="no" insert-button="true" insert-button-position="top"
-        insert-button-floatable="false" quick-filter-columns="DESCRIPTION">
+        visible-colums="IDPARTE;DESCRIPTION;STARTDATE;ENDDATE;STATUS"  delete-button="no"
+        insert-button="true" insert-button-position="top" insert-button-floatable="false"
+        quick-filter-columns="DESCRIPTION" (onDataLoaded)="dataLoaded($event)" >
         <mat-card class="list" *ngFor="let rowData of list.dataArray" [o-list-item]="rowData">
           <mat-card-header>
             <mat-card-title><strong>
@@ -23,7 +23,7 @@
                 {{ rowData.STATUS }}
               </span>
               <span mat-line *ngIf="(rowData.STATUS )=== 'Enviado'">
-                <mat-icon mat-list-icon color="accent">cloud_upload</mat-icon>
+                <mat-icon mat-list-icon [ngStyle]="{'color':'orange'}">cloud_upload</mat-icon>
                 {{ rowData.STATUS }}
               </span>
               <span mat-line *ngIf="(rowData.STATUS )=== 'Aceptado'">

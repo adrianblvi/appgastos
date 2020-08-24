@@ -1,32 +1,35 @@
 <o-column>
   <o-row>
-    <div fxFlex="1 1 auto">
-      <o-grid #grid attr="spendinglist" service="gastos" entity="gastoDetails" keys="ID"
+    <div fxFlex>
+      <o-grid #grid attr="spendinglist" service="gastos" entity="gastoDetails" keys="ID" cols="2"
         columns="ID;CONCEPT;STARTDATE;COMMENTS;CATEGORY;AMOUNT;PRICE;PHOTO"
         visible-columns="ID;CONCEPT;STARTDATE;COMMENTS;CATEGORY;AMOUNT;PRICE;PHOTO" insert-button="true"
         insert-button-position="top" sortable-columns="STARTDATE" sort-column="STARTDATE" pagination-controls="true"
-        page-size-options="8;16;24;32;64" quick-filter-columns="CONCEPT">
+        page-size-options="8;16" quick-filter-columns="CONCEPT">
         <o-grid-item *ngFor="let list of grid.dataArray">
           <o-column layout-padding class="container-item">
             <div class=card fxLayout="column">
-              <div fxLayout="row" fxLayoutAlign="space-between end" class="image-container">
-                <mat-divider fxFlex></mat-divider>
-                <div class="image">
-                  <o-image attr="PHOTO" class="circular--square" empty-image="assets/images/logoimatia.png"
-                    show-controls="false" auto-fit="true" data={{list.PHOTO}}>
-                  </o-image>
-                </div>
-                <mat-divider fxFlex></mat-divider>
-              </div>
               <span>
-                <mat-icon>account_circle</mat-icon> {{list.CONCEPT}}
+                <mat-icon mat-list-icon color="primary">business_center </mat-icon>{{list.CONCEPT}}
               </span>
               <span>
-                <mat-icon>today </mat-icon>
+                <mat-icon mat-list-icon color="accent">today </mat-icon>
                 {{ list.STARTDATE | date}}
               </span>
-              <span>
-                <mat-icon>business_center </mat-icon>
+              <span *ngIf="(list.CATEGORY)==='Comida'">
+                <mat-icon mat-list-icon color="accent">fastfood </mat-icon>
+                {{ list.CATEGORY }}
+              </span>
+              <span *ngIf="(list.CATEGORY)==='Gasolina'">
+                <mat-icon mat-list-iconcolor="accent">local_gas_station </mat-icon>
+                {{ list.CATEGORY }}
+              </span>
+              <span *ngIf="(list.CATEGORY)==='Transporte'">
+                <mat-icon mat-list-icon color="accent">directions_car </mat-icon>
+                {{ list.CATEGORY }}
+              </span>
+              <span *ngIf="(list.CATEGORY)==='Material'">
+                <mat-icon mat-list-icon color="accent">device_unknown </mat-icon>
                 {{ list.CATEGORY }}
               </span>
             </div>

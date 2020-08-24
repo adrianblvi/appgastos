@@ -1,5 +1,6 @@
 package com.ontimize.model.core.service;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
@@ -79,7 +80,9 @@ public class ParteService implements IParteService {
 	@Override
 	public EntityResult parteDetailsQuery(Map<String, Object> keyMap, List<String> attrList)
 			throws OntimizeJEERuntimeException {
+		
 		return this.daoHelper.query(this.parteDao, keyMap, attrList, parteDao.QUERY_DETAILS);
 	}
+	
 
 }

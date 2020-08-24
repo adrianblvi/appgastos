@@ -25,6 +25,7 @@ export class HomeDetailComponent implements OnInit {
   private OBSERVATIONS: OTextInputComponent;
 
   public isVisible: boolean;
+  public toSend: boolean;
   constructor() {
   }
   ngOnInit() {
@@ -32,13 +33,14 @@ export class HomeDetailComponent implements OnInit {
   }
   onFormDataLoaded(event) {
     if (!(this.oForm.getDataValue('STATUS').value == 0 || this.oForm.getDataValue('STATUS').value == 3)) {
+
       this.DESCRIPTION.enabled = "no";
       this.STARTDATE.enabled = "no";
       this.ENDDATE.enabled = "no";
       this.COMMENTS.enabled = "no";
     } else {
-
       this.isVisible = this.oForm.getDataValue('STATUS').value == 3;
+      this.toSend = this.oForm.getDataValue('STATUS').value == 0;
     }
   }
   onClick(event) {
@@ -57,6 +59,7 @@ export class HomeDetailComponent implements OnInit {
           console.log(err)
         })
     } else {
+      this.toSend = false;
       this.oForm.updateData(this.oForm.getKeysValues(), { 'STATUS': 1 }).subscribe((res) => {
 
       },
