@@ -68,10 +68,13 @@
         </mat-tab-group>
       </ng-template>
       <o-row>
-        <div *ngIf="toSend|| isVisible ">
+        <div *ngIf="toSend|| isVisible " fxFlex>
           <o-row>
-            <o-button class="button" attr="stroked" type="STROKED" icon="send" icon-position="left" label="ENVIAR PARTE"
-              (click)="onClick($event)">
+            <o-button class="button" attr="stroked" type="STROKED" icon="send" icon-position="left"
+              [ngStyle]="{'color':'green'}" label="ENVIAR PARTE" (click)="onClick($event)">
+            </o-button>
+            <o-button class="button" attr="stroked" type="STROKED" icon="delete" color="warn" icon-position="right"
+              [ngStyle]="{'color':'red'}" (click)="onClickDelete($event)">
             </o-button>
           </o-row>
         </div>

@@ -44,7 +44,8 @@
   "LANG_es": "Spanish",
   "Parte rechazado":"Part rejected",
   "OBSERVATIONS":"Observations",
-  "ENVIAR PARTE": "SEND PARTE"
+  "ENVIAR PARTE": "SEND TICKET",
+  "ELIMINAR":"DELETE"
   
 
 }

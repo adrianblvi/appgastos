@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { OFormComponent, ODateInputComponent, OIntegerInputComponent, OTextInputComponent, OTextareaInputComponent } from 'ontimize-web-ngx';
+import {
+  OFormComponent, ODateInputComponent, OIntegerInputComponent, OTextInputComponent, OTextareaInputComponent, DialogService, ODialogConfig
+} from 'ontimize-web-ngx';
 import { isUndefined } from 'util';
 
 @Component({
@@ -26,10 +28,12 @@ export class HomeDetailComponent implements OnInit {
 
   public isVisible: boolean;
   public toSend: boolean;
-  constructor() {
+  constructor(protected dialogService: DialogService) {
   }
   ngOnInit() {
-
+    if (!(this.oForm.getDataValue('STATUS').value == 0 || this.oForm.getDataValue('STATUS').value == 3)) {
+      this.oForm.setQueryMode;
+    }
   }
   onFormDataLoaded(event) {
     if (!(this.oForm.getDataValue('STATUS').value == 0 || this.oForm.getDataValue('STATUS').value == 3)) {
@@ -69,6 +73,21 @@ export class HomeDetailComponent implements OnInit {
     }
 
   }
+  onClickDelete(evt: any) {
+
+    if (this.dialogService) {
+      const config: ODialogConfig = {
+        icon: 'delete',
+        okButtonText: 'YES',
+        cancelButtonText: 'NO'
+      };
+      if (this.dialogService.confirm('Eliminar parte', '¿Seguro que quiere eliminar este parte?', config)) {
+
+      }
+    }
+
+  }
+
   dateChange(event) {
     if (this.ENDDATE.getValue() < this.STARTDATE.getValue()) {
       alert("La fecha fin debe ser posterior a la fecha inicio");
