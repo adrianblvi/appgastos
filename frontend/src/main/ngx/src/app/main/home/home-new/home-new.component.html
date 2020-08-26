@@ -6,19 +6,19 @@
         </o-text-input>
       </o-row>
       <o-row>
-        <o-integer-input #STATUS type="hidden" [hidden]="true" attr="STATUS"></o-integer-input>
+        <o-integer-input class="input-padding" #STATUS type="hidden" [hidden]="true" attr="STATUS"></o-integer-input>
       </o-row>
       <o-row>
-        <o-date-input #STARTDATE (onChange)="dateChange($event)" attr="STARTDATE" start-view="month" required="yes"
-          fxFlex="75">
+        <o-date-input class="input-padding" #STARTDATE (onChange)="dateChange($event)" attr="STARTDATE"
+          start-view="month" required="yes" fxFlex="75">
         </o-date-input>
       </o-row>
       <o-row>
-        <o-date-input #ENDDATE (onChange)="dateChange($event)" attr="ENDDATE" start-view="month" required="yes"
-          fxFlex="75"></o-date-input>
+        <o-date-input class="input-padding" #ENDDATE (onChange)="dateChange($event)" attr="ENDDATE" start-view="month"
+          required="yes" fxFlex="75"></o-date-input>
       </o-row>
       <o-row>
-        <o-textarea-input attr="COMMENTS" appearance="outline" fxFlex="75"></o-textarea-input>
+        <o-textarea-input class="input-padding" attr="COMMENTS" appearance="outline" fxFlex="75"></o-textarea-input>
       </o-row>
     </o-column>
   </o-row>

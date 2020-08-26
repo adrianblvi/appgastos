@@ -31,9 +31,6 @@ export class HomeDetailComponent implements OnInit {
   constructor(protected dialogService: DialogService) {
   }
   ngOnInit() {
-    if (!(this.oForm.getDataValue('STATUS').value == 0 || this.oForm.getDataValue('STATUS').value == 3)) {
-      this.oForm.setQueryMode;
-    }
   }
   onFormDataLoaded(event) {
     if (!(this.oForm.getDataValue('STATUS').value == 0 || this.oForm.getDataValue('STATUS').value == 3)) {

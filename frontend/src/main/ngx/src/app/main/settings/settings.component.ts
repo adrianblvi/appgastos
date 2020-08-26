@@ -1,6 +1,6 @@
-import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
+import { Component, ViewChild, ViewEncapsulation, Injector } from '@angular/core';
 import { MatRadioChange, MatSlideToggle, MatSlideToggleChange } from '@angular/material';
-import { AppConfig, OTranslateService } from 'ontimize-web-ngx';
+import { AppConfig, OTranslateService, NavigationService } from 'ontimize-web-ngx';
 
 import { DocsSiteTheme, ThemeService } from '../../shared/theme.service';
 
@@ -27,8 +27,10 @@ export class SettingsComponent {
   constructor(
     private _appConfig: AppConfig,
     private _themeService: ThemeService,
-    private _translateService: OTranslateService
+    private _translateService: OTranslateService,
+    protected injector: Injector
   ) {
+    this.injector.get(NavigationService).initialize();
     this.availableThemes = this._themeService.availableThemes;
     this.currentTheme = this._themeService.currentTheme;
     this.darkDefaultMode = this.currentTheme.isDark;

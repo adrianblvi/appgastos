@@ -22,15 +22,20 @@
         </o-date-input>
       </o-row>
       <o-row>
-        <o-textarea-input #COMMENTS class="text" attr="COMMENTS" rows="3" enabled="yes" fxFlex="85">
+        <o-textarea-input #COMMENTS class="text" attr="COMMENTS" rows="3" enabled="yes" fxFlex>
         </o-textarea-input>
       </o-row>
       <o-row>
-        <o-text-input #OBSERVATIONS [style.display]="isVisible?'block':'none'" class="text" attr="OBSERVATIONS"
+        <o-text-input #OBSERVATIONS [style.display]="isVisible?'block':'none'" class="text" attr="OBSERVATIONS" fxFlex
           enabled="no">
         </o-text-input>
       </o-row>
-
+      <o-row>
+        <span [style.display]="isVisible?'block':'none'">
+          <mat-icon mat-list-icon color="warn">highlight_off</mat-icon>
+          <font color="red">El parte ha sido rechazado</font>
+        </span>
+      </o-row>
       <div *ngIf="toSend|| isVisible ;else elseBlock">
         <mat-tab-group>
           <mat-tab [label]="'SPENDINGS' | oTranslate">
@@ -70,12 +75,12 @@
       <o-row>
         <div *ngIf="toSend|| isVisible " fxFlex>
           <o-row>
-            <o-button class="button" attr="stroked" type="STROKED" icon="send" icon-position="left"
-              [ngStyle]="{'color':'green'}" label="ENVIAR PARTE" (click)="onClick($event)">
+            <o-button class="button" attr="stroked" type="STROKED" icon="cloud_upload" icon-position="left"
+              [ngStyle]="{'color':'orange'}" label="ENVIAR" (click)="onClick($event)">
             </o-button>
-            <o-button class="button" attr="stroked" type="STROKED" icon="delete" color="warn" icon-position="right"
+            <!-- <o-button class="button" attr="stroked" type="STROKED" icon="delete" color="warn" icon-position="right"
               [ngStyle]="{'color':'red'}" (click)="onClickDelete($event)">
-            </o-button>
+            </o-button>-->
           </o-row>
         </div>
       </o-row>
