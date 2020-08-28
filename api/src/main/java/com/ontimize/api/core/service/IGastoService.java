@@ -3,6 +3,7 @@ package com.ontimize.api.core.service;
 import java.util.List;
 import java.util.Map;
 
+import com.ontimize.db.AdvancedEntityResult;
 import com.ontimize.db.EntityResult;
 import com.ontimize.jee.common.exceptions.OntimizeJEERuntimeException;
 
@@ -19,6 +20,8 @@ public interface IGastoService {
 
 	public EntityResult gastoDelete(Map<String, Object> keyMap) throws OntimizeJEERuntimeException;
 
+	public AdvancedEntityResult gastoDetailsPaginationQuery(Map<String, Object> keyMap, List<String> attrList,
+			int recordNumber, int startIndex, List<String> orderBy);
 	// CATEGORY
 
 	public EntityResult categoryQuery(Map<String, Object> keyMap, List<String> attrList)

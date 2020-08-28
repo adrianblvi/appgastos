@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.ontimize.api.core.service.IGastoService;
+import com.ontimize.db.AdvancedEntityResult;
 import com.ontimize.db.EntityResult;
 import com.ontimize.jee.common.exceptions.OntimizeJEERuntimeException;
 import com.ontimize.jee.server.dao.DefaultOntimizeDaoHelper;
@@ -89,5 +90,13 @@ public class GastoService implements IGastoService {
 	@Transactional(rollbackFor = Exception.class)
 	public EntityResult vgastoDelete(Map<String, Object> keyMap) throws OntimizeJEERuntimeException {
 		return this.daoHelper.delete(gastoDao, keyMap);
+	}
+
+	@Override
+	public AdvancedEntityResult gastoDetailsPaginationQuery(Map<String, Object> keyMap, List<String> attrList,
+			int recordNumber, int startIndex, List<String> orderBy) {
+		return this.daoHelper.paginationQuery(this.gastoDao, keyMap, attrList,
+		 recordNumber, startIndex, orderBy,gastoDao.QUERY_DETAILS);
+		
 	}
 }

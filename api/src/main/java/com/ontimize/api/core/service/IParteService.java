@@ -3,6 +3,7 @@ package com.ontimize.api.core.service;
 import java.util.List;
 import java.util.Map;
 
+import com.ontimize.db.AdvancedEntityResult;
 import com.ontimize.db.EntityResult;
 import com.ontimize.jee.common.exceptions.OntimizeJEERuntimeException;
 
@@ -33,5 +34,6 @@ public interface IParteService {
 
 	EntityResult parteDetailsQuery(Map<String, Object> keyMap, List<String> attrList)
 			throws OntimizeJEERuntimeException;
-
+	public AdvancedEntityResult parteDetailsPaginationQuery(Map<String, Object> keyMap, List<String> attrList,
+			int recordNumber, int startIndex, List<String> orderBy);
 }

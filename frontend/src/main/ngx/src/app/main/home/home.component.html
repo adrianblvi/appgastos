@@ -5,7 +5,7 @@
         columns="IDPARTE;DESCRIPTION;STARTDATE;COMMENTS;STATUS;ENDDATE"
         visible-colums="IDPARTE;DESCRIPTION;STARTDATE;ENDDATE;STATUS" delete-button="no" insert-button="true"
         insert-button-position="top" insert-button-floatable="false" quick-filter-columns="DESCRIPTION"
-        (onDataLoaded)="dataLoaded($event)">
+        (onDataLoaded)="dataLoaded($event)" pageable="yes" query-rows="5">
         <mat-card class="list" *ngFor="let rowData of list.dataArray" [o-list-item]="rowData">
           <mat-card-header>
             <mat-card-title><strong>

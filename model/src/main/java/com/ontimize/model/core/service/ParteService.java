@@ -1,6 +1,5 @@
 package com.ontimize.model.core.service;
 
-import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
@@ -10,6 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.ontimize.api.core.service.IParteService;
+import com.ontimize.db.AdvancedEntityResult;
 import com.ontimize.db.EntityResult;
 import com.ontimize.jee.common.exceptions.OntimizeJEERuntimeException;
 import com.ontimize.jee.server.dao.DefaultOntimizeDaoHelper;
@@ -82,6 +82,13 @@ public class ParteService implements IParteService {
 			throws OntimizeJEERuntimeException {
 		
 		return this.daoHelper.query(this.parteDao, keyMap, attrList, parteDao.QUERY_DETAILS);
+	}
+
+	@Override
+	public AdvancedEntityResult parteDetailsPaginationQuery(Map<String, Object> keyMap, List<String> attrList,
+			int recordNumber, int startIndex, List<String> orderBy) {
+		return this.daoHelper.paginationQuery(this.parteDao, keyMap, attrList,
+				 recordNumber, startIndex, orderBy,parteDao.QUERY_DETAILS);
 	}
 	
 

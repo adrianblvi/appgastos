@@ -70,20 +70,6 @@ export class HomeDetailComponent implements OnInit {
     }
 
   }
-  onClickDelete(evt: any) {
-
-    if (this.dialogService) {
-      const config: ODialogConfig = {
-        icon: 'delete',
-        okButtonText: 'YES',
-        cancelButtonText: 'NO'
-      };
-      if (this.dialogService.confirm('Eliminar parte', '¿Seguro que quiere eliminar este parte?', config)) {
-
-      }
-    }
-
-  }
 
   dateChange(event) {
     if (this.ENDDATE.getValue() < this.STARTDATE.getValue()) {
