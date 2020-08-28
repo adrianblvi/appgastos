@@ -1,6 +1,6 @@
 <o-form #oForm service="partes" entity="parte"
   columns="IDPARTE;DESCRIPTION;STARTDATE,ENDDATE;STATUS;COMMENTS;OBSERVATIONS" keys="IDPARTE" header-actions="U;D"
-  show-header-actions-text="no"  layout-align="center" show-header-navigation="no"
+  show-header-actions-text="no" layout-align="center" show-header-navigation="no"
   (onDataLoaded)="onFormDataLoaded($event)">
   <o-text-input class="text" attr="IDPARTE" sql-type="INTEGER" enabled="no" fxFlex></o-text-input>
   <o-row>

@@ -28,6 +28,7 @@ export class HomeDetailComponent implements OnInit {
 
   public isVisible: boolean;
   public toSend: boolean;
+
   constructor(protected dialogService: DialogService) {
   }
   ngOnInit() {
@@ -73,7 +74,13 @@ export class HomeDetailComponent implements OnInit {
 
   dateChange(event) {
     if (this.ENDDATE.getValue() < this.STARTDATE.getValue()) {
-      alert("La fecha fin debe ser posterior a la fecha inicio");
+      if (this.dialogService) {
+        const config: ODialogConfig = {
+          icon: 'clear',
+          okButtonText: 'Aceptar'
+        };
+        this.dialogService.error('Error en las fechas', 'La fecha fin debe ser posterior a la fecha inicio', config);
+      }
     }
   }
 }

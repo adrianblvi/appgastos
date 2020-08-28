@@ -45,7 +45,9 @@
   "Parte rechazado":"Part rejected",
   "OBSERVATIONS":"Observations",
   "ENVIAR ": "Send",
-  "ELIMINAR":"DELETE"
+  "ELIMINAR":"DELETE",
+  "Error en las fechas":"Problem with dates",
+  "La fecha fin debe ser posterior a la fecha inicio":"End date must be after the start date"
   
 
 }

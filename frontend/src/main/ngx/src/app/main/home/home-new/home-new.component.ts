@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { ODateInputComponent, OIntegerInputComponent } from 'ontimize-web-ngx';
+import { ODateInputComponent, OIntegerInputComponent, DialogService, ODialogConfig } from 'ontimize-web-ngx';
 import { isUndefined } from 'util';
 
 @Component({
@@ -14,7 +14,7 @@ export class HomeNewComponent implements OnInit {
   private STARTDATE: ODateInputComponent;
   @ViewChild('ENDDATE')
   private ENDDATE: ODateInputComponent;
-  constructor() { }
+  constructor(protected dialogService: DialogService) { }
 
   ngOnInit() {
 
@@ -23,8 +23,13 @@ export class HomeNewComponent implements OnInit {
     if (!(isUndefined(this.STARTDATE.getValue()))) {
       if (!(isUndefined(this.ENDDATE.getValue()))) {
         if (this.ENDDATE.getValue() < this.STARTDATE.getValue()) {
-          alert("La fecha fin debe ser posterior a la fecha inicio");
-          this.ENDDATE.setValue(undefined);
+          if (this.dialogService) {
+            const config: ODialogConfig = {
+              icon: 'clear',
+              okButtonText: 'Aceptar'
+            };
+            this.dialogService.error('Error en las fechas', 'La fecha fin debe ser posterior a la fecha inicio', config);
+          }
         }
       }
     }
