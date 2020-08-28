@@ -25,11 +25,4 @@ export class HomeComponent implements OnInit {
   navigate() {
     this.router.navigate(['../', 'login'], { relativeTo: this.actRoute });
   }
-
-  dataLoaded(e: any[]) {
-    e.sort(function (a, b) {
-      return b['STARTDATE'] - a['STARTDATE'];
-    })
-    this.list.setDataArray(e);
-  }
 }
