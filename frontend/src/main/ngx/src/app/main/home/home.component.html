@@ -14,26 +14,30 @@
           </mat-card-header>
           <mat-card-content>
             <o-column>
-              <span>
-                <mat-icon color="accent">today </mat-icon>{{ rowData.STARTDATE | date  }} -
-                {{ rowData.ENDDATE | date  }}
-              </span>
-              <span mat-line *ngIf="(rowData.STATUS )=== 'Sin enviar'">
-                <mat-icon mat-list-icon [ngStyle]="{'color':'grey'}">assignment_late</mat-icon>
-                {{ rowData.STATUS }}
-              </span>
-              <span mat-line *ngIf="(rowData.STATUS )=== 'Enviado'">
-                <mat-icon mat-list-icon [ngStyle]="{'color':'orange'}">cloud_upload</mat-icon>
-                {{ rowData.STATUS }}
-              </span>
-              <span mat-line *ngIf="(rowData.STATUS )=== 'Aceptado'">
-                <mat-icon mat-list-icon [ngStyle]="{'color':'green'}">done</mat-icon>
-                {{ rowData.STATUS }}
-              </span>
-              <span mat-line *ngIf="(rowData.STATUS )=== 'Rechazado'">
-                <mat-icon mat-list-icon color="warn">clear</mat-icon>
-                {{ rowData.STATUS }}
-              </span>
+              <o-row>
+                <span>
+                  <mat-icon color="accent">today </mat-icon>{{ rowData.STARTDATE | date  }} -
+                  {{ rowData.ENDDATE | date  }}
+                </span>
+              </o-row>
+              <o-row>
+                <span mat-line *ngIf="(rowData.STATUS )=== 'Sin enviar'">
+                  <mat-icon mat-list-icon [ngStyle]="{'color':'grey'}">assignment_late</mat-icon>
+                  {{ rowData.STATUS }}
+                </span>
+                <span mat-line *ngIf="(rowData.STATUS )=== 'Enviado'">
+                  <mat-icon mat-list-icon [ngStyle]="{'color':'orange'}">cloud_upload</mat-icon>
+                  {{ rowData.STATUS }}
+                </span>
+                <span mat-line *ngIf="(rowData.STATUS )=== 'Aceptado'">
+                  <mat-icon mat-list-icon [ngStyle]="{'color':'green'}">done</mat-icon>
+                  {{ rowData.STATUS }}
+                </span>
+                <span mat-line *ngIf="(rowData.STATUS )=== 'Rechazado'">
+                  <mat-icon mat-list-icon color="warn">clear</mat-icon>
+                  {{ rowData.STATUS }}
+                </span>
+              </o-row>
             </o-column>
           </mat-card-content>
         </mat-card>

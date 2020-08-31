@@ -1,5 +1,5 @@
 <o-form #oForm service="gastos" entity="gasto" keys="ID" header-actions="U" show-header-navigation="no"
-  show-header-actions-text="no">
+  show-header-actions-text="no" (onDataLoaded)="onFormDataLoaded($event)">
   <o-row layout-gap="14px" layout-padding-vertical>
     <mat-tab-group fxFlex>
       <mat-tab label="{{ 'SPENDING_INFORMATION' | oTranslate }}">
@@ -21,8 +21,8 @@
             <o-currency-input attr="PRICE" class="text" fxFlex="30"></o-currency-input>
           </o-row>
           <o-row>
-            <o-image id="PHOTO" attr="PHOTO" class="text" empty-icon="add_a_photo" full-screen-button="true"
-              width="250px" height="150px" fxFlex="60">
+            <o-image #PHOTO id="PHOTO" attr="PHOTO" class="text" empty-icon="add_a_photo"
+              (onChange)="onPhotoChange($event)" width="250px" height="150px" fxFlex="60">
             </o-image>
           </o-row>
           <o-row>
