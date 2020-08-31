@@ -63,8 +63,11 @@ export class HomeGastoDetailComponent implements OnInit {
             this.PHOTO.fullScreenButton = true;
           }
           this.isEnabled = true;
-          this.isVisible = true;
-
+          if (!(isUndefined(this.CATEGORY.getSelectedRecord()['PRICE']))) {
+            this.isVisible = true;
+          } else {
+            this.isVisible = false;
+          }
         }
       } else {
         console.error(resp);
@@ -84,7 +87,11 @@ export class HomeGastoDetailComponent implements OnInit {
       if (isUndefined(this.CATEGORY.getSelectedRecord()['PRICE'])) {
         this.AMOUNT.enabled = "no";
         this.AMOUNT.setValue(undefined);
+        this.PRICE.enabled = "yes";
+        this.PRICE.setValue(0);
+        this.isVisible = false;
       } else {
+        this.isVisible = true;
         this.a = this.CATEGORY.getSelectedRecord()['PRICE']
         this.AMOUNT.enabled = "yes";
         this.PRICE.setValue(this.a);
@@ -94,6 +101,7 @@ export class HomeGastoDetailComponent implements OnInit {
   amountChange(event) {
     if (this.isEnabled) {
       if (!isUndefined(this.a)) {
+        this.PRICE.enabled = "no";
         this.PRICE.setValue(this.AMOUNT.getValue() * this.a);
       } else {
         this.PRICE.setValue(0);
