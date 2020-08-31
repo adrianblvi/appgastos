@@ -42,4 +42,8 @@ public interface IGastoService {
 	EntityResult vgastoQuery(Map<String, Object> keyMap, List<String> attrList) throws OntimizeJEERuntimeException;
 
 	public EntityResult vgastoDelete(Map<String, Object> keyMap) throws OntimizeJEERuntimeException;
+
+	// PARTE
+	public EntityResult parteQuery(Map<String, Object> keyMap, List<String> attrList)
+			throws OntimizeJEERuntimeException;
 }

@@ -15,6 +15,7 @@ import com.ontimize.jee.common.exceptions.OntimizeJEERuntimeException;
 import com.ontimize.jee.server.dao.DefaultOntimizeDaoHelper;
 import com.ontimize.model.core.dao.CategoryDao;
 import com.ontimize.model.core.dao.GastoDao;
+import com.ontimize.model.core.dao.ParteDao;
 
 @Service("GastoService")
 @Lazy
@@ -24,6 +25,8 @@ public class GastoService implements IGastoService {
 	private GastoDao gastoDao;
 	@Autowired
 	CategoryDao categoryDao;
+	@Autowired
+	private ParteDao parteDao;
 	@Autowired
 	private DefaultOntimizeDaoHelper daoHelper;
 
@@ -95,8 +98,14 @@ public class GastoService implements IGastoService {
 	@Override
 	public AdvancedEntityResult gastoDetailsPaginationQuery(Map<String, Object> keyMap, List<String> attrList,
 			int recordNumber, int startIndex, List<String> orderBy) {
-		return this.daoHelper.paginationQuery(this.gastoDao, keyMap, attrList,
-		 recordNumber, startIndex, orderBy,gastoDao.QUERY_DETAILS);
-		
+		return this.daoHelper.paginationQuery(this.gastoDao, keyMap, attrList, recordNumber, startIndex, orderBy,
+				gastoDao.QUERY_DETAILS);
+
+	}
+
+	@Override
+	public EntityResult parteQuery(Map<String, Object> keyMap, List<String> attrList)
+			throws OntimizeJEERuntimeException {
+		return this.daoHelper.query(this.parteDao, keyMap, attrList);
 	}
 }
