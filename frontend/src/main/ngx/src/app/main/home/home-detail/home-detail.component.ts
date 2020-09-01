@@ -3,6 +3,8 @@ import {
   OFormComponent, ODateInputComponent, OIntegerInputComponent, OTextInputComponent, OTextareaInputComponent, DialogService, ODialogConfig
 } from 'ontimize-web-ngx';
 import { isUndefined } from 'util';
+import { MatDialog } from "@angular/material/dialog";
+import { ConfirmationDialogComponent } from "../confirmation-dialog/confirmation-dialog.component";
 
 @Component({
   selector: 'app-home-detail',
@@ -29,13 +31,12 @@ export class HomeDetailComponent implements OnInit {
   public isVisible: boolean;
   public toSend: boolean;
 
-  constructor(protected dialogService: DialogService) {
+  constructor(public dialogService: DialogService, public dialog: MatDialog) {
   }
   ngOnInit() {
   }
   onFormDataLoaded(event) {
     if (!(this.oForm.getDataValue('STATUS').value == 0 || this.oForm.getDataValue('STATUS').value == 3)) {
-
       this.DESCRIPTION.enabled = "no";
       this.STARTDATE.enabled = "no";
       this.ENDDATE.enabled = "no";
@@ -44,6 +45,7 @@ export class HomeDetailComponent implements OnInit {
       this.isVisible = this.oForm.getDataValue('STATUS').value == 3;
       this.toSend = this.oForm.getDataValue('STATUS').value == 0;
     }
+
   }
   onClick(event) {
     if (!isUndefined(this.OBSERVATIONS)) {
@@ -71,7 +73,20 @@ export class HomeDetailComponent implements OnInit {
     }
 
   }
-
+  onClickDelete(event) {
+    this.dialog.open(ConfirmationDialogComponent, {
+      data: `¿Desea eliminar este parte?`
+    })
+      .afterClosed()
+      .subscribe((confirmado: Boolean) => {
+        if (confirmado) {
+          alert("Pulsado si");
+        } else {
+          alert("Pulsado No");
+        }
+      });
+    //alert("Pulsado");
+  }
   dateChange(event) {
     if (this.ENDDATE.getValue() < this.STARTDATE.getValue()) {
       if (this.dialogService) {

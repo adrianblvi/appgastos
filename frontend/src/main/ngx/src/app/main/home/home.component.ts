@@ -10,7 +10,7 @@ import { OListComponent } from 'ontimize-web-ngx';
 export class HomeComponent implements OnInit {
   @ViewChild('list')
   private list: OListComponent;
-
+  public isiPad: boolean;
 
   constructor(
     private router: Router,
@@ -19,9 +19,8 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
-
   }
-
+  
   navigate() {
     this.router.navigate(['../', 'login'], { relativeTo: this.actRoute });
   }

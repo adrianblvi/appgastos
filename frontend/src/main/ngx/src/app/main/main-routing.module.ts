@@ -5,12 +5,16 @@ import { AuthGuardService } from 'ontimize-web-ngx';
 import { MainComponent } from './main.component';
 import { HomeModule } from './home/home.module';
 import { SettingsModule } from './settings/settings.module';
+import { ConfirmationDialogComponent } from "./home/confirmation-dialog/confirmation-dialog.component";
 
 export function loadHomeModule() {
   return HomeModule;
 }
 export function loadSettingsModule() {
   return SettingsModule;
+}
+export function loadConfirmationModule() {
+  return ConfirmationDialogComponent;
 }
 
 export const routes: Routes = [
@@ -26,6 +30,9 @@ export const routes: Routes = [
       }, {
         path: 'settings',
         loadChildren: loadSettingsModule
+      }, {
+        path: 'confirmationDialog',
+        loadChildren: loadConfirmationModule
       }
     ]
   }

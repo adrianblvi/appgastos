@@ -1,11 +1,11 @@
 <o-column>
   <o-row>
-    <div fxFlex>
+    <div class="home" fxFlex>
       <o-list #list attr="parteslist" service="partes" entity="parteDetails" keys="IDPARTE" header-mode="floating"
         columns="IDPARTE;DESCRIPTION;STARTDATE;COMMENTS;STATUS;ENDDATE"
         visible-colums="IDPARTE;DESCRIPTION;STARTDATE;ENDDATE;STATUS" sort-columns="STARTDATE:DESC" delete-button="no"
         insert-button="true" insert-button-position="top" insert-button-floatable="false"
-        quick-filter-columns="DESCRIPTION" pageable="yes" query-rows="4">
+        quick-filter-columns="DESCRIPTION" pageable="yes" query-rows="5">
         <mat-card class="list" *ngFor="let rowData of list.dataArray" [o-list-item]="rowData">
           <mat-card-header>
             <mat-card-title><strong>
