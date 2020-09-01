@@ -20,6 +20,7 @@ export class HomeGastoNewComponent implements OnInit {
   @ViewChild('PRICE')
   private PRICE: OCurrencyInputComponent;
   private a: number;
+  public isVisible: boolean;
 
   constructor(private activatedRoute: ActivatedRoute) { }
   ngOnInit() {
@@ -32,7 +33,11 @@ export class HomeGastoNewComponent implements OnInit {
     if (isUndefined(this.CATEGORY.getSelectedRecord()['PRICE'])) {
       this.AMOUNT.enabled = "no";
       this.AMOUNT.setValue(undefined);
+      this.PRICE.enabled = "yes";
+      this.PRICE.setValue(0);
+      this.isVisible = false;
     } else {
+      this.isVisible = true;
       this.a = this.CATEGORY.getSelectedRecord()['PRICE']
       this.AMOUNT.enabled = "yes";
       this.PRICE.setValue(this.a);
@@ -40,6 +45,7 @@ export class HomeGastoNewComponent implements OnInit {
   }
   amountChange(event) {
     if (!isUndefined(this.a)) {
+      this.PRICE.enabled = "no";
       this.PRICE.setValue(this.AMOUNT.getValue() * this.a);
     } else {
       this.PRICE.setValue(0);

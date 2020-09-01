@@ -1,4 +1,5 @@
-<o-form #oForm service="gastos" entity="gasto" keys="ID" header-actions="R;U" show-header-navigation="no">
+<o-form #oForm service="gastos" entity="gasto" keys="ID" header-actions="R;U" show-header-navigation="no"
+  show-header-actions-text="no">
   <o-row layout-gap="14px" layout-padding-vertical>
     <mat-tab-group fxFlex>
       <mat-tab label="{{ 'SPENDING_INFORMATION' | oTranslate }}">
@@ -7,28 +8,28 @@
             <o-integer-input #IDPARTE type="hidden" [hidden]="true" attr="IDPARTE"></o-integer-input>
           </o-row>
           <o-row>
-            <o-text-input class="input-padding" attr="CONCEPT" fxFlex="50" required="yes"></o-text-input>
+            <o-text-input class="input-padding" attr="CONCEPT" fxFlex="70" required="yes"></o-text-input>
           </o-row>
           <o-row>
-            <o-date-input attr="STARTDATE" required="yes" fxFlex="50"></o-date-input>
+            <o-date-input attr="STARTDATE" required="yes" fxFlex="70"></o-date-input>
           </o-row>
           <o-row>
             <o-combo #CATEGORY (onChange)="valueChange($event)" attr="CATEGORY" service="gastos" entity="category"
-              columns="ID;DESCRIPTION;PRICE" value-column="ID" keys="ID" visible-columns="DESCRIPTION" fxFlex="50"
+              columns="ID;DESCRIPTION;PRICE" value-column="ID" keys="ID" visible-columns="DESCRIPTION" fxFlex="70"
               required="yes"></o-combo>
           </o-row>
           <o-row layout-gap="14px" layout-padding-vertical>
-            <o-integer-input #AMOUNT (onChange)="amountChange($event)" parent-keys='CATEGORY' attr="AMOUNT"
-              class="input-padding" fxFlex="25">
+            <o-integer-input #AMOUNT (onChange)="amountChange($event)" [style.display]="isVisible?'block':'none'"
+              parent-keys='CATEGORY' attr="AMOUNT" class="input-padding" fxFlex="30">
             </o-integer-input>
-            <o-currency-input #PRICE attr="PRICE" class="input-padding" fxFlex="25"></o-currency-input>
+            <o-currency-input #PRICE attr="PRICE" class="input-padding" fxFlex="30"></o-currency-input>
           </o-row>
           <o-row>
-            <o-textarea-input attr="COMMENTS" fxFlex="50"></o-textarea-input>
-          </o-row>
-          <o-row>
-            <o-image #PHOTO attr="PHOTO" accept="image/*" capture="enviroment" fxFlex="40">
+            <o-image #PHOTO attr="PHOTO" accept="image/*" capture="enviroment" fxFlex="70">
             </o-image>
+          </o-row>
+          <o-row>
+            <o-textarea-input attr="COMMENTS" fxFlex="70"></o-textarea-input>
           </o-row>
         </o-column>
       </mat-tab>
