@@ -80,12 +80,16 @@ export class HomeDetailComponent implements OnInit {
       .afterClosed()
       .subscribe((confirmado: Boolean) => {
         if (confirmado) {
-          alert("Pulsado si");
+          this.oForm.deleteData(this.oForm.getKeysValues()).subscribe((res) => {
+            this.oForm._closeDetailAction();
+          },
+            (err) => {
+              console.log(err)
+            })
+
         } else {
-          alert("Pulsado No");
         }
       });
-    //alert("Pulsado");
   }
   dateChange(event) {
     if (this.ENDDATE.getValue() < this.STARTDATE.getValue()) {
